@@ -11,7 +11,7 @@
 int contar_unos(int *arreglo, int num_elementos) {
     int contador = 0;
     
-    for (int i = 0; i < num_elementos; i++) {
+    for (int i = 0; i <= num_elementos; i++) {
         int valor = arreglo[i];
         
         while (valor != 0) {
@@ -34,10 +34,8 @@ int main() {
     }
     
     // Llamar a la función contar_unos con el arreglo y el número de elementos deseados
-    int num_unos = contar_unos(arreglo, 10);
+    volatile int num_unos = contar_unos(arreglo, 10);
     
-    printf("El número de unos en los primeros 10 elementos del arreglo es: %d\n", num_unos);
-    
-    return 0;
+    return num_unos;
+    printf("%f",num_unos);
 }
-
