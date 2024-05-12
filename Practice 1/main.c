@@ -1,6 +1,8 @@
 /* 
  * File:   main.c
  * Author: Jose Lopez
+ *C.I.:26.893.008
+ *Asigantura: Microprocessors I
  *
  * Created on 30 de abril de 2024, 09:02 AM
  */
@@ -28,12 +30,12 @@ int contar_unos(int *arreglo, int num_elementos) {
 int main() {
     int arreglo[100];
     
-    // Llenar el arreglo con valores iguales al doble del índice correspondiente
+    // Llenar el arreglo con valores iguales al doble del Ã­ndice correspondiente
     for (int i = 0; i < 100; i++) {
         arreglo[i] = i * 2;
     }
     
-    // Llamar a la función contar_unos con el arreglo y el número de elementos deseados
+    // Llamar a la funciÃ³n contar_unos con el arreglo y el nÃºmero de elementos deseados
     volatile int num_unos = contar_unos(arreglo, 10);
     
     return num_unos;
