@@ -51,10 +51,10 @@
         
         \draw[arrow] (start) -- (pro1);
         \draw[arrow] (pro1) -- (dec1);
-        \draw[arrow] (dec1) --node[anchor=south east]{No} (pro2a);
+        \draw[arrow] (dec1) --node[anchor=south east]{Si} (pro2a);
         \draw[arrow] (pro2a) -- (pro2b);
         \draw[arrow] (pro2b.west) --++(-1,0) --++(0,4) -- (dec1.west);
-        \draw[arrow] (dec1) --node[anchor=south east]{Si} (pro2c);
+        \draw[arrow] (dec1) --node[anchor=south east]{No} (pro2c);
         \draw[arrow] (pro2c) -- (stop);
     \end{tikzpicture}
     
