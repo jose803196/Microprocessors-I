@@ -1,0 +1,118 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"117 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h: 117: int printf(const char *restrict, ...);
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"11 main.c
+[; ;main.c: 11: int contar_unos(int *arreglo, int num_elementos) {
+[v _contar_unos `(i ~T0 @X0 1 ef2`*i`i ]
+{
+[e :U _contar_unos ]
+[v _arreglo `*i ~T0 @X0 1 r1 ]
+[v _num_elementos `i ~T0 @X0 1 r2 ]
+[f ]
+"12
+[; ;main.c: 12:     int contador = 0;
+[v _contador `i ~T0 @X0 1 a ]
+[e = _contador -> 0 `i ]
+"14
+[; ;main.c: 14:     for (int i = 0; i <= num_elementos; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 12  ]
+[e :U 9 ]
+{
+"15
+[; ;main.c: 15:         int valor = arreglo[i];
+[v _valor `i ~T0 @X0 1 a ]
+[e = _valor *U + _arreglo * -> _i `x -> -> # *U _arreglo `i `x ]
+"17
+[; ;main.c: 17:         while (valor != 0) {
+[e $U 13  ]
+[e :U 14 ]
+{
+"18
+[; ;main.c: 18:             if (valor & 1) {
+[e $ ! != & _valor -> 1 `i -> 0 `i 16  ]
+{
+"19
+[; ;main.c: 19:                 contador++;
+[e ++ _contador -> 1 `i ]
+"20
+[; ;main.c: 20:             }
+}
+[e :U 16 ]
+"21
+[; ;main.c: 21:             valor = valor >> 1;
+[e = _valor >> _valor -> 1 `i ]
+"22
+[; ;main.c: 22:         }
+}
+[e :U 13 ]
+"17
+[; ;main.c: 17:         while (valor != 0) {
+[e $ != _valor -> 0 `i 14  ]
+[e :U 15 ]
+"23
+[; ;main.c: 23:     }
+}
+[e ++ _i -> 1 `i ]
+[e :U 12 ]
+[e $ <= _i _num_elementos 9  ]
+[e :U 10 ]
+}
+"25
+[; ;main.c: 25:     return contador;
+[e ) _contador ]
+[e $UE 8  ]
+"26
+[; ;main.c: 26: }
+[e :UE 8 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"28
+[; ;main.c: 28: int main() {
+[v _main `(i ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"29
+[; ;main.c: 29:     int arreglo[100];
+[v _arreglo `i ~T0 @X0 -> 100 `i a ]
+"32
+[; ;main.c: 32:     for (int i = 0; i < 100; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 100 `i 18  ]
+[e $U 19  ]
+[e :U 18 ]
+{
+"33
+[; ;main.c: 33:         arreglo[i] = i * 2;
+[e = *U + &U _arreglo * -> -> _i `ui `ux -> -> # *U &U _arreglo `ui `ux * _i -> 2 `i ]
+"34
+[; ;main.c: 34:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 100 `i 18  ]
+[e :U 19 ]
+}
+"37
+[; ;main.c: 37:     volatile int num_unos = contar_unos(arreglo, 10);
+[v _num_unos `Vi ~T0 @X0 1 a ]
+[e = _num_unos ( _contar_unos (2 , &U _arreglo -> 10 `i ]
+"39
+[; ;main.c: 39:     return num_unos;
+[e ) _num_unos ]
+[e $UE 17  ]
+"40
+[; ;main.c: 40:     printf("%f",num_unos);
+[e ( _printf , (. :s 1C _num_unos ]
+"41
+[; ;main.c: 41: }
+[e :UE 17 ]
+}
+[p f _printf 8396800 ]
+[a 1C 37 102 0 ]
