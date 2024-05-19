@@ -7,14 +7,6 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-
-
-
-
-
-
-
-
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -185,7 +177,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 9 "main.c" 2
+# 1 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 3
@@ -264,7 +256,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 10 "main.c" 2
+# 2 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 3
@@ -323,8 +315,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 11 "main.c" 2
-
+# 3 "main.c" 2
 
 # 1 "./config.h" 1
 
@@ -8334,172 +8325,109 @@ unsigned char __t3rd16on(void);
 
 
  void config(void);
-# 13 "main.c" 2
+# 4 "main.c" 2
 
-
-
-
-
-
-
-typedef struct {
-
-    int edad;
-    int altura;
-    char sexo;
-    char nombre[30];
-
-} volatile persona;
-const unsigned char tab1[10]={1,2,3,4,5,6,7,8,9,0};
-long Suma (int, int);
-void calc(int *var,int *var2,int,int);
-
-int x;
 
 
 
 __attribute__((address(0x1006))) const int firma[] = {0x600d};
 
+void init_leds(void) {
+    LATAbits.LATA0 = 0;
+    LATAbits.LATA1 = 0;
+    LATAbits.LATA2 = 0;
+    LATAbits.LATA3 = 0;
+}
 
-int main(int argc, char** argv) {
+void set_led(int led, char state) {
+    switch (led) {
+        case 0:
+            LATAbits.LATA0 = state;
+            break;
+        case 1:
+            LATAbits.LATA1 = state;
+            break;
+        case 2:
+            LATAbits.LATA2 = state;
+            break;
+        case 3:
+            LATAbits.LATA3 = state;
+            break;
+    }
+}
 
-    volatile unsigned int o=0x5555,q=0;
+void intermitencia(void) {
+    static int cont_led1 = 0, cont_led2 = 0, cont_led3 = 0, cont_led4 = 0;
 
-    char l=0;
-
-    for(l=0;l<=5;l++){
-
-        q=o>>1;
+    if (cont_led1 == 50) {
+        set_led(0, 1);
+    }
+    if (cont_led1 == 100) {
+        set_led(0, 0);
+        cont_led1 = 0;
     }
 
+    if (cont_led2 == 50) {
+        set_led(1, 1);
+    }
+    if (cont_led2 == 75) {
+        set_led(1, 0);
+        cont_led2 = 0;
+    }
 
+    if (cont_led3 == 15) {
+        set_led(2, 1);
+    }
+    if (cont_led3 == 65) {
+        set_led(2, 0);
+        cont_led3 = 0;
+    }
+
+    if (cont_led4 == 50) {
+        set_led(3, 1);
+    }
+    if (cont_led4 == 150) {
+        set_led(3, 0);
+        cont_led4 = 0;
+    }
+
+    cont_led1++;
+    cont_led2++;
+    cont_led3++;
+    cont_led4++;
+    _delay((unsigned long)((10)*(48000000/4000.0)));
+}
+
+int main(void) {
     config();
-   char tab2[10];
-   char n;
+    volatile char state = 0;
 
-   for (n=0;n<=9;n++){
+    init_leds();
 
-       tab2[n]=n+5;
+    while (1) {
+        switch (state) {
+            case 0:
+                intermitencia();
+                break;
+            case 1:
+                set_led(0, 1);
+                set_led(1, 1);
+                set_led(2, 1);
+                set_led(3, 1);
+                break;
+            case 2:
+                set_led(0, 0);
+                set_led(1, 0);
+                set_led(2, 0);
+                set_led(3, 0);
+                break;
+        }
 
-   }
-
-
-
-
-    persona sujeto1;
-    persona sujeto2;
-    sujeto2.altura=180;
-
-
-    sujeto1.altura=160;
-    sujeto1.edad=20;
-    sujeto1.sexo=1;
-    strcpy (sujeto1.nombre,"Pedro");
-
-
-
-   volatile int comp=0;
-   volatile char arreglo1[20];
-   volatile char arreglo2[20];
-   strcpy(arreglo1,"Earlos");
-   strcpy(arreglo2,"Carla");
-
-   comp=memcmp(arreglo1,arreglo2,3);
-
-
-
-volatile int* p;
-p=1;
-volatile int k;
-k=&p;
-*p=8;
-(*p)++;
-*p=5;
-
-
-
-int var_sum=0;
-int var_mul=0;
-
-
-
-calc(&var_sum,&var_mul,9,8);
-
-
-
-    long int a = 0;
-    int b = 0;
-    int c = 0;
-
-   volatile long d =0 ;
-   x=5;
-    a = 5123;
-    b = 0x39;
-    c = a + b;
-    d=Suma (a,b);
-
-    if (d==10)
-    {
-        d=0;
-    }
-    else
-    {
-        d=1;
+        if (PORTBbits.RB0 == 0) {
+            state = (state + 1) % 3;
+            _delay((unsigned long)((500)*(48000000/4000.0)));
+        }
     }
 
-    for (a=0;a<10;a=a+2)
-    {
-        d++;
-    }
- a=5;
-while (a>2)
-{
-    a--;
-}
-
-
-
-
-
-while (1){
-# 151 "main.c"
-    while(PORTBbits.RB0){
-        LATAbits.LATA0=0;
-        _delay((unsigned long)((500)*(48000000/4000.0)));
-        LATAbits.LATA0=1;
-        _delay((unsigned long)((500)*(48000000/4000.0)));
-
-        LATAbits.LATA1=0;
-        _delay((unsigned long)((250)*(48000000/4000.0)));
-        LATAbits.LATA1=1;
-        _delay((unsigned long)((500)*(48000000/4000.0)));
-
-        LATAbits.LATA2=0;
-        _delay((unsigned long)((500)*(48000000/4000.0)));
-        LATAbits.LATA2=1;
-        _delay((unsigned long)((150)*(48000000/4000.0)));
-
-        LATAbits.LATA3=0;
-        _delay((unsigned long)((1000)*(48000000/4000.0)));
-        LATAbits.LATA3=1;
-        _delay((unsigned long)((500)*(48000000/4000.0)));
-    }
-# 183 "main.c"
-}
-return (0);
-}
-
-long Suma(int f ,int b)
-{
- volatile int a=0;
-    long resultado=0;
-resultado=f+b;
- a=300;
- x=100;
-    return resultado;
-}
-void calc(int *res_sum, int *res_mul,int a,int b){
-
-    (*res_sum)=a+b;
-    *res_mul=a*b;
+    return 0;
 }

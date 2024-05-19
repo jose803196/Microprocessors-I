@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\joseg\AppData\Local\Temp\xcAs948.\driver_tmp_3.o
+ C:\Users\joseg\AppData\Local\Temp\xcAsghc.\driver_tmp_3.o
  -Odist/default/production\Pr_ctica2_JoseLopez.X.production.hex
  -logfile=dist/default/production\Pr_ctica2_JoseLopez.X.production.hxl
  -format=INHX032
@@ -10,28 +10,26 @@
 
 ### Memory Usage ###
  Input file ranges:
-  1000h - 1003h		(C:\Users\joseg\AppData\Local\Temp\xcAs948.\driver_tmp_3.o)
-  1006h - 1026h		(C:\Users\joseg\AppData\Local\Temp\xcAs948.\driver_tmp_3.o)
-  1028h - 1501h		(C:\Users\joseg\AppData\Local\Temp\xcAs948.\driver_tmp_3.o)
-  200000h - 200007h		(C:\Users\joseg\AppData\Local\Temp\xcAs948.\driver_tmp_3.o)
-  300000h - 30000Dh		(C:\Users\joseg\AppData\Local\Temp\xcAs948.\driver_tmp_3.o)
+  1000h - 1003h		(C:\Users\joseg\AppData\Local\Temp\xcAsghc.\driver_tmp_3.o)
+  1006h - 13F5h		(C:\Users\joseg\AppData\Local\Temp\xcAsghc.\driver_tmp_3.o)
+  200000h - 200007h		(C:\Users\joseg\AppData\Local\Temp\xcAsghc.\driver_tmp_3.o)
+  300000h - 30000Dh		(C:\Users\joseg\AppData\Local\Temp\xcAsghc.\driver_tmp_3.o)
  Unused ranges:
   0h - FFFh
   1004h - 1005h
-  1027h - 1027h
-  1502h - 1FFFFFh
+  13F6h - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\joseg\AppData\Local\Temp\xcAs948.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\joseg\AppData\Local\Temp\xcAsghc.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
 00001000 | H1 H1 H1 H1 -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001010 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001020 | H1 H1 H1 H1 H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1 H1
+00001020 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001030 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001040 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001050 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -92,24 +90,7 @@
 000013C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000013D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000013E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000013F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001400 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001410 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001420 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001430 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001440 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001450 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001460 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001470 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001480 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001490 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000014A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000014B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000014C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000014D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000014E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000014F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001500 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
+000013F0 | H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------
