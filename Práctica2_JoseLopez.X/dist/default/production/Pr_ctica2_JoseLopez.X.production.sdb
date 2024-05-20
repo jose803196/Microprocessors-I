@@ -31,13 +31,13 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "14 C:\Users\joseg\Desktop\8vo SEMESTRE\MICROPROCESADORES I\Práctica2_JoseLopez.X\config.c
 [v _config config `(v  1 e 1 0 ]
-"10 C:\Users\joseg\Desktop\8vo SEMESTRE\MICROPROCESADORES I\Práctica2_JoseLopez.X\main.c
+"11 C:\Users\joseg\Desktop\8vo SEMESTRE\MICROPROCESADORES I\Práctica2_JoseLopez.X\main.c
 [v _init_leds init_leds `(v  1 e 1 0 ]
-"17
+"22
 [v _set_led set_led `(v  1 e 1 0 ]
-"34
+"40
 [v _intermitencia intermitencia `(v  1 e 1 0 ]
-"76
+"87
 [v _main main `(i  1 e 2 0 ]
 "232 C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f45k50.h
 [v _ANSELA ANSELA `VEuc  1 e 1 @3931 ]
@@ -111,34 +111,34 @@
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 "8 C:\Users\joseg\Desktop\8vo SEMESTRE\MICROPROCESADORES I\Práctica2_JoseLopez.X\main.c
 [v _firma firma `C[1]i  1 e 2 @4102 ]
-"76
+"87
 [v _main main `(i  1 e 2 0 ]
 {
-"78
+"89
 [v main@state state `VEuc  1 a 1 8 ]
-"108
+"120
 } 0
-"34
+"40
 [v _intermitencia intermitencia `(v  1 e 1 0 ]
 {
-"35
+"42
 [v intermitencia@cont_led1 cont_led1 `i  1 s 2 cont_led1 ]
 [v intermitencia@cont_led2 cont_led2 `i  1 s 2 cont_led2 ]
 [v intermitencia@cont_led3 cont_led3 `i  1 s 2 cont_led3 ]
 [v intermitencia@cont_led4 cont_led4 `i  1 s 2 cont_led4 ]
-"74
+"85
 } 0
-"17
+"22
 [v _set_led set_led `(v  1 e 1 0 ]
 {
 [v set_led@led led `i  1 p 2 0 ]
 [v set_led@state state `uc  1 p 1 2 ]
-"32
+"37
 } 0
-"10
+"11
 [v _init_leds init_leds `(v  1 e 1 0 ]
 {
-"15
+"16
 } 0
 "14 C:\Users\joseg\Desktop\8vo SEMESTRE\MICROPROCESADORES I\Práctica2_JoseLopez.X\config.c
 [v _config config `(v  1 e 1 0 ]

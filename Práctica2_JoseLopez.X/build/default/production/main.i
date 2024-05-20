@@ -8332,12 +8332,17 @@ unsigned char __t3rd16on(void);
 
 __attribute__((address(0x1006))) const int firma[] = {0x600d};
 
+
 void init_leds(void) {
     LATAbits.LATA0 = 0;
     LATAbits.LATA1 = 0;
     LATAbits.LATA2 = 0;
     LATAbits.LATA3 = 0;
 }
+
+
+
+
 
 void set_led(int led, char state) {
     switch (led) {
@@ -8356,12 +8361,15 @@ void set_led(int led, char state) {
     }
 }
 
+
 void intermitencia(void) {
+
     static int cont_led1 = 0, cont_led2 = 0, cont_led3 = 0, cont_led4 = 0;
 
     if (cont_led1 == 50) {
         set_led(0, 1);
     }
+
     if (cont_led1 == 100) {
         set_led(0, 0);
         cont_led1 = 0;
@@ -8370,6 +8378,7 @@ void intermitencia(void) {
     if (cont_led2 == 50) {
         set_led(1, 1);
     }
+
     if (cont_led2 == 75) {
         set_led(1, 0);
         cont_led2 = 0;
@@ -8378,6 +8387,7 @@ void intermitencia(void) {
     if (cont_led3 == 15) {
         set_led(2, 1);
     }
+
     if (cont_led3 == 65) {
         set_led(2, 0);
         cont_led3 = 0;
@@ -8386,6 +8396,7 @@ void intermitencia(void) {
     if (cont_led4 == 50) {
         set_led(3, 1);
     }
+
     if (cont_led4 == 150) {
         set_led(3, 0);
         cont_led4 = 0;
@@ -8406,6 +8417,7 @@ int main(void) {
 
     while (1) {
         switch (state) {
+
             case 0:
                 intermitencia();
                 break;

@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.46\pic\dat\20240104201356_en.msgs \
   -cn -h+dist/default/production\Pr_ctica2_JoseLopez.X.production.sym \
   --cmf=dist/default/production\Pr_ctica2_JoseLopez.X.production.cmf -z \
-  -Q18F45K50 -oC:\Users\joseg\AppData\Local\Temp\xcAsghc.\driver_tmp_3.o \
+  -Q18F45K50 -oC:\Users\joseg\AppData\Local\Temp\xcAsdc4.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/Pr_ctica2_JoseLopez.X.production.map \
-  --md=C:\Users\joseg\AppData\Local\Temp\xcAsghc.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\joseg\AppData\Local\Temp\xcAsdc4.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -p_firma_text=1006h -ACODE=01000h-07FFFh \
   -ACONST=01000h-07FFFh -ASMALLCONST=01000h-010FFhx112 \
   -AMEDIUMCONST=01000h-07FFFh -ACOMRAM=01h-05Fh -AABS1=00h-07FFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\joseg\AppData\Local\Temp\xcAsghc.\driver_tmp_9.o \
+  C:\Users\joseg\AppData\Local\Temp\xcAsdc4.\driver_tmp_9.o \
   dist/default/production\Pr_ctica2_JoseLopez.X.production.o 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Machine type is 18F45K50
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\joseg\AppData\Local\Temp\xcAsghc.\driver_tmp_9.o
+C:\Users\joseg\AppData\Local\Temp\xcAsdc4.\driver_tmp_9.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                               1000     1000        4      800       0
