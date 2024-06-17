@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Práctica3_JoseLopez.X
+PROJECTNAME=practica 4.X
 
 # Active Configuration
 DEFAULTCONF=default
