@@ -1,0 +1,1776 @@
+
+
+Microchip MPLAB XC8 Assembler V2.46 build 20240104201356 
+                                                                                               Sun Jun 23 19:03:19 2024
+
+Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1 
+     1                           	processor	18F45K50
+     2                           	fnconf	rparam,??,?,0
+     3                           	pagewidth 120
+     4                           	opt	flic
+     5                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1,noexec
+     6                           	psect	_firma_text,global,ovrld,reloc=2,class=CODE,delta=1,noexec
+     7                           	psect	nvCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+     8                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     9                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+    10                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+    11                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    14                           	psect	intcodelo,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    17                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    18                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    19                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1,lowdata
+    20   000000                     
+    21                           ; Generated 05/01/2024 GMT
+    22                           ; 
+    23                           ; Copyright © 2024, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    24                           ; All rights reserved.
+    25                           ; 
+    26                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    27                           ; 
+    28                           ; Redistribution and use in source and binary forms, with or without modification, are
+    29                           ; permitted provided that the following conditions are met:
+    30                           ; 
+    31                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    32                           ;        conditions and the following disclaimer.
+    33                           ; 
+    34                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    35                           ;        of conditions and the following disclaimer in the documentation and/or other
+    36                           ;        materials provided with the distribution. Publication is not required when
+    37                           ;        this file is used in an embedded application.
+    38                           ; 
+    39                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    40                           ;        software without specific prior written permission.
+    41                           ; 
+    42                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    43                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    44                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    45                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    46                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    47                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    48                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    49                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    50                           ; 
+    51                           ; 
+    52                           ; Code-generator required, PIC18F45K50 Definitions
+    53                           ; 
+    54                           ; SFR Addresses
+    55   000000                     
+    56                           	psect	smallconst
+    57   0011C6                     __psmallconst:
+    58                           	callstack 0
+    59   0011C6  00                 	db	0
+    60   0011C7                     _segmentos:
+    61                           	callstack 0
+    62   0011C7  5F                 	db	95
+    63   0011C8  41                 	db	65
+    64   0011C9  9B                 	db	155
+    65   0011CA  D3                 	db	211
+    66   0011CB  C5                 	db	197
+    67   0011CC  D6                 	db	214
+    68   0011CD  DE                 	db	222
+    69   0011CE  43                 	db	67
+    70   0011CF  DF                 	db	223
+    71   0011D0  D7                 	db	215
+    72   0011D1  CF                 	db	207
+    73   0011D2  DC                 	db	220
+    74   0011D3  1E                 	db	30
+    75   0011D4  D9                 	db	217
+    76   0011D5  9E                 	db	158
+    77   0011D6  8E                 	db	142
+    78   0011D7                     __end_of_segmentos:
+    79                           	callstack 0
+    80   0011D7                     _c4:
+    81                           	callstack 0
+    82   0011D7  0A                 	db	10
+    83   0011D8  0B                 	db	11
+    84   0011D9  0C                 	db	12
+    85   0011DA  0D                 	db	13
+    86   0011DB                     __end_of_c4:
+    87                           	callstack 0
+    88   0011DB                     _c3:
+    89                           	callstack 0
+    90   0011DB  03                 	db	3
+    91   0011DC  06                 	db	6
+    92   0011DD  09                 	db	9
+    93   0011DE  0F                 	db	15
+    94   0011DF                     __end_of_c3:
+    95                           	callstack 0
+    96   0011DF                     _c2:
+    97                           	callstack 0
+    98   0011DF  02                 	db	2
+    99   0011E0  05                 	db	5
+   100   0011E1  08                 	db	8
+   101   0011E2  00                 	db	0
+   102   0011E3                     __end_of_c2:
+   103                           	callstack 0
+   104   0011E3                     _c1:
+   105                           	callstack 0
+   106   0011E3  01                 	db	1
+   107   0011E4  04                 	db	4
+   108   0011E5  07                 	db	7
+   109   0011E6  0E                 	db	14
+   110   0011E7                     __end_of_c1:
+   111                           	callstack 0
+   112   000000                     _firma_absaddr	set	4102
+   113   000000                     _firma_absaddr	set	4102
+   114   0011E7  00                 	db	0	; dummy byte at the end
+   115   000000                     
+   116                           	psect	_firma_text
+   117   001006                     __p_firma_text:
+   118                           	callstack 0
+   119   001006                     _firma:
+   120                           	callstack 0
+   121   001006  600D               	dw	24589
+   122   001008                     __end_of_firma:
+   123                           	callstack 0
+   124   000000                     _ANSELB	set	3932
+   125   000000                     _ANSELC	set	3933
+   126   000000                     _LATBbits	set	3978
+   127   000000                     _EECON2	set	4007
+   128                           
+   129                           	psect	nvCOMRAM
+   130   000026                     __pnvCOMRAM:
+   131                           	callstack 0
+   132   000026                     _tecla:
+   133                           	callstack 0
+   134   000026                     	ds	1
+   135   000000                     _ANSELAbits	set	3931
+   136   000000                     _INTCON	set	4082
+   137   000000                     _ANSELA	set	3931
+   138   000000                     _PORTD	set	3971
+   139   000000                     _LATAbits	set	3977
+   140   000000                     _LATCbits	set	3979
+   141   000000                     _TMR0L	set	4054
+   142   000000                     _TMR0H	set	4055
+   143   000000                     _INTCONbits	set	4082
+   144   000000                     _INTCON3bits	set	4080
+   145   000000                     _INTCON2bits	set	4081
+   146   000000                     _LATEbits	set	3981
+   147   000000                     _TRISAbits	set	3986
+   148   000000                     _OSCTUNE	set	3995
+   149   000000                     _EECON1bits	set	4006
+   150   000000                     _EEDATA	set	4008
+   151   000000                     _EEADR	set	4009
+   152   000000                     _RCSTA1bits	set	4011
+   153   000000                     _TXSTA1bits	set	4012
+   154   000000                     _SPBRG1	set	4015
+   155   000000                     _RCONbits	set	4048
+   156   000000                     _OSCCON2	set	4050
+   157   000000                     _OSCCON	set	4051
+   158   000000                     _T0CONbits	set	4053
+   159   000000                     _PIE1bits	set	3997
+   160   000000                     _TRISE	set	3990
+   161   000000                     _TRISDbits	set	3989
+   162   000000                     _TRISCbits	set	3988
+   163   000000                     _TRISBbits	set	3987
+   164   000000                     _ANSELE	set	3935
+   165   000000                     _ANSELD	set	3934
+   166   000000                     _IPR1bits	set	3999
+   167   000000                     _BAUDCON1	set	4024
+   168   000000                     _SPBRGH1	set	4016
+   169                           
+   170                           ; #config settings
+   171                           
+   172                           	psect	cinit
+   173   00148E                     __pcinit:
+   174                           	callstack 0
+   175   00148E                     start_initialization:
+   176                           	callstack 0
+   177   00148E                     __initialization:
+   178                           	callstack 0
+   179                           
+   180                           ; Clear objects allocated to COMRAM (21 bytes)
+   181   00148E  EE00  F001         	lfsr	0,__pbssCOMRAM
+   182   001492  0E15               	movlw	21
+   183   001494                     clear_0:
+   184   001494  6AEE               	clrf	postinc0,c
+   185   001496  06E8               	decf	wreg,f,c
+   186   001498  E1FD               	bnz	clear_0
+   187   00149A                     end_of_initialization:
+   188                           	callstack 0
+   189   00149A                     __end_of__initialization:
+   190                           	callstack 0
+   191   00149A  9027               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
+   192   00149C  9227               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+   193   00149E  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   194   0014A0  6EF8               	movwf	tblptru,c
+   195   0014A2  0100               	movlb	0
+   196   0014A4  EFF4  F008         	goto	_main	;jump to C main() function
+   197                           
+   198                           	psect	bssCOMRAM
+   199   000001                     __pbssCOMRAM:
+   200                           	callstack 0
+   201   000001                     _wig_val:
+   202                           	callstack 0
+   203   000001                     	ds	4
+   204   000005                     	ds	2
+   205   000007                     _w_ceros:
+   206                           	callstack 0
+   207   000007                     	ds	2
+   208   000009                     _w_unos:
+   209                           	callstack 0
+   210   000009                     	ds	2
+   211   00000B                     lint@rota:
+   212                           	callstack 0
+   213   00000B                     	ds	1
+   214   00000C                     _d4:
+   215                           	callstack 0
+   216   00000C                     	ds	1
+   217   00000D                     _d3:
+   218                           	callstack 0
+   219   00000D                     	ds	1
+   220   00000E                     _d2:
+   221                           	callstack 0
+   222   00000E                     	ds	1
+   223   00000F                     _d1:
+   224                           	callstack 0
+   225   00000F                     	ds	1
+   226   000010                     _p_par:
+   227                           	callstack 0
+   228   000010                     	ds	1
+   229   000011                     _p_imp:
+   230                           	callstack 0
+   231   000011                     	ds	1
+   232   000012                     _nbits1:
+   233                           	callstack 0
+   234   000012                     	ds	1
+   235   000013                     _nbits0:
+   236                           	callstack 0
+   237   000013                     	ds	1
+   238   000014                     _nbits:
+   239                           	callstack 0
+   240   000014                     	ds	1
+   241   000015                     _timeout:
+   242                           	callstack 0
+   243   000015                     	ds	1
+   244                           
+   245                           	psect	cstackCOMRAM
+   246   000016                     __pcstackCOMRAM:
+   247                           	callstack 0
+   248   000016                     shift@k:
+   249                           	callstack 0
+   250   000016                     det_fila@fila:
+   251                           	callstack 0
+   252                           
+   253                           ; 1 bytes @ 0x0
+   254   000016                     	ds	1
+   255   000017                     shift@dato:
+   256                           	callstack 0
+   257                           
+   258                           ; 1 bytes @ 0x1
+   259   000017                     	ds	1
+   260   000018                     shift@n:
+   261                           	callstack 0
+   262                           
+   263                           ; 1 bytes @ 0x2
+   264   000018                     	ds	1
+   265   000019                     ??_lint:
+   266                           
+   267                           ; 1 bytes @ 0x3
+   268   000019                     	ds	9
+   269   000022                     lint@fila:
+   270                           	callstack 0
+   271                           
+   272                           ; 1 bytes @ 0xC
+   273   000022                     	ds	1
+   274   000023                     ??_main:
+   275                           
+   276                           ; 1 bytes @ 0xD
+   277   000023                     	ds	2
+   278   000025                     main@contador_digitos:
+   279                           	callstack 0
+   280                           
+   281                           ; 1 bytes @ 0xF
+   282   000025                     	ds	1
+   283                           
+   284 ;;
+   285 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   286 ;;
+   287 ;; *************** function _main *****************
+   288 ;; Defined at:
+   289 ;;		line 120 in file "main_display_teclado_wiegand.c"
+   290 ;; Parameters:    Size  Location     Type
+   291 ;;		None
+   292 ;; Auto vars:     Size  Location     Type
+   293 ;;  contador_dig    1   15[COMRAM] unsigned char 
+   294 ;; Return value:  Size  Location     Type
+   295 ;;                  1    wreg      void 
+   296 ;; Registers used:
+   297 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   298 ;; Tracked objects:
+   299 ;;		On entry : 0/0
+   300 ;;		On exit  : 0/0
+   301 ;;		Unchanged: 0/0
+   302 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   303 ;;      Params:         0       0       0       0       0       0       0       0       0
+   304 ;;      Locals:         1       0       0       0       0       0       0       0       0
+   305 ;;      Temps:          2       0       0       0       0       0       0       0       0
+   306 ;;      Totals:         3       0       0       0       0       0       0       0       0
+   307 ;;Total ram usage:        3 bytes
+   308 ;; Hardware stack levels required when called: 3
+   309 ;; This function calls:
+   310 ;;		_conf_wig
+   311 ;;		_config
+   312 ;; This function is called by:
+   313 ;;		Startup code after reset
+   314 ;; This function uses a non-reentrant model
+   315 ;;
+   316                           
+   317                           	psect	text0
+   318   0011E8                     __ptext0:
+   319                           	callstack 0
+   320   0011E8                     _main:
+   321                           	callstack 28
+   322   0011E8                     
+   323                           ;main_display_teclado_wiegand.c: 121:     config();
+   324   0011E8  EC9C  F009         	call	_config	;wreg free
+   325   0011EC                     
+   326                           ;main_display_teclado_wiegand.c: 122:     LATAbits.LATA3=1;
+   327   0011EC  8689               	bsf	137,3,c	;volatile
+   328                           
+   329                           ;main_display_teclado_wiegand.c: 123:     conf_wig();
+   330   0011EE  EC37  F00A         	call	_conf_wig	;wreg free
+   331   0011F2                     
+   332                           ;main_display_teclado_wiegand.c: 124:     char contador_digitos;;main_display_teclado_wi
+      +                          egand.c: 126:     tecla=0x5f;
+   333   0011F2  0E5F               	movlw	95
+   334   0011F4  6E26               	movwf	_tecla^0,c
+   335   0011F6                     l1173:
+   336                           
+   337                           ;main_display_teclado_wiegand.c: 128:         if(tecla!=0xff && tecla != 0x5f){
+   338   0011F6  2826               	incf	_tecla^0,w,c
+   339   0011F8  B4D8               	btfsc	status,2,c
+   340   0011FA  EF01  F009         	goto	u211
+   341   0011FE  EF03  F009         	goto	u210
+   342   001202                     u211:
+   343   001202  EFFB  F008         	goto	l1173
+   344   001206                     u210:
+   345   001206  0E5F               	movlw	95
+   346   001208  1826               	xorwf	_tecla^0,w,c
+   347   00120A  B4D8               	btfsc	status,2,c
+   348   00120C  EF0A  F009         	goto	u221
+   349   001210  EF0C  F009         	goto	u220
+   350   001214                     u221:
+   351   001214  EFFB  F008         	goto	l1173
+   352   001218                     u220:
+   353   001218                     
+   354                           ;main_display_teclado_wiegand.c: 129:             if (tecla == 0x0A)
+   355   001218  0E0A               	movlw	10
+   356   00121A  1826               	xorwf	_tecla^0,w,c
+   357   00121C  A4D8               	btfss	status,2,c
+   358   00121E  EF13  F009         	goto	u231
+   359   001222  EF15  F009         	goto	u230
+   360   001226                     u231:
+   361   001226  EF39  F009         	goto	l1189
+   362   00122A                     u230:
+   363   00122A                     
+   364                           ;main_display_teclado_wiegand.c: 130:             {;main_display_teclado_wiegand.c: 131:
+      +                                           contador_digitos = 0;
+   365   00122A  0E00               	movlw	0
+   366   00122C  6E25               	movwf	main@contador_digitos^0,c
+   367                           
+   368                           ;main_display_teclado_wiegand.c: 132:                 d1 = d2 = d3 = d4 = 0x00;
+   369   00122E  0E00               	movlw	0
+   370   001230  6E0C               	movwf	_d4^0,c
+   371   001232  C00C  F00D         	movff	_d4,_d3
+   372   001236  C00D  F00E         	movff	_d3,_d2
+   373   00123A  C00E  F00F         	movff	_d2,_d1
+   374   00123E                     
+   375                           ;main_display_teclado_wiegand.c: 133:                 _delay((unsigned long)((200)*(4800
+      +                          0000/4000.0)));
+   376   00123E  0E0D               	movlw	13
+   377   001240  6E24               	movwf	(??_main+1)^0,c
+   378   001242  0E2D               	movlw	45
+   379   001244  6E23               	movwf	??_main^0,c
+   380   001246  0ED8               	movlw	216
+   381   001248                     u427:
+   382   001248  2EE8               	decfsz	wreg,f,c
+   383   00124A  D7FE               	bra	u427
+   384   00124C  2E23               	decfsz	??_main^0,f,c
+   385   00124E  D7FC               	bra	u427
+   386   001250  2E24               	decfsz	(??_main+1)^0,f,c
+   387   001252  D7FA               	bra	u427
+   388   001254                     
+   389                           ;main_display_teclado_wiegand.c: 134:                 LATAbits.LATA3=0;
+   390   001254  9689               	bcf	137,3,c	;volatile
+   391   001256                     
+   392                           ;main_display_teclado_wiegand.c: 135:                 _delay((unsigned long)((50)*(48000
+      +                          000/4000.0)));
+   393   001256  0E04               	movlw	4
+   394   001258  6E24               	movwf	(??_main+1)^0,c
+   395   00125A  0E0C               	movlw	12
+   396   00125C  6E23               	movwf	??_main^0,c
+   397   00125E  0E34               	movlw	52
+   398   001260                     u437:
+   399   001260  2EE8               	decfsz	wreg,f,c
+   400   001262  D7FE               	bra	u437
+   401   001264  2E23               	decfsz	??_main^0,f,c
+   402   001266  D7FC               	bra	u437
+   403   001268  2E24               	decfsz	(??_main+1)^0,f,c
+   404   00126A  D7FA               	bra	u437
+   405   00126C                     
+   406                           ;main_display_teclado_wiegand.c: 136:                 LATAbits.LATA3=1;
+   407   00126C  8689               	bsf	137,3,c	;volatile
+   408                           
+   409                           ;main_display_teclado_wiegand.c: 137:             }
+   410   00126E  EF97  F009         	goto	l1219
+   411   001272                     l1189:
+   412                           
+   413                           ;main_display_teclado_wiegand.c: 139:             {;main_display_teclado_wiegand.c: 140:
+      +                                           if (contador_digitos < 4 && tecla != 0x0b && tecla != 0x0c && tecla != 
+      +                          0x0d && tecla != 0x0e && tecla != 0x0f)
+   414   001272  0E04               	movlw	4
+   415   001274  6025               	cpfslt	main@contador_digitos^0,c
+   416   001276  EF3F  F009         	goto	u241
+   417   00127A  EF41  F009         	goto	u240
+   418   00127E                     u241:
+   419   00127E  EF97  F009         	goto	l1219
+   420   001282                     u240:
+   421   001282  0E0B               	movlw	11
+   422   001284  1826               	xorwf	_tecla^0,w,c
+   423   001286  B4D8               	btfsc	status,2,c
+   424   001288  EF48  F009         	goto	u251
+   425   00128C  EF4A  F009         	goto	u250
+   426   001290                     u251:
+   427   001290  EF97  F009         	goto	l1219
+   428   001294                     u250:
+   429   001294  0E0C               	movlw	12
+   430   001296  1826               	xorwf	_tecla^0,w,c
+   431   001298  B4D8               	btfsc	status,2,c
+   432   00129A  EF51  F009         	goto	u261
+   433   00129E  EF53  F009         	goto	u260
+   434   0012A2                     u261:
+   435   0012A2  EF97  F009         	goto	l1219
+   436   0012A6                     u260:
+   437   0012A6  0E0D               	movlw	13
+   438   0012A8  1826               	xorwf	_tecla^0,w,c
+   439   0012AA  B4D8               	btfsc	status,2,c
+   440   0012AC  EF5A  F009         	goto	u271
+   441   0012B0  EF5C  F009         	goto	u270
+   442   0012B4                     u271:
+   443   0012B4  EF97  F009         	goto	l1219
+   444   0012B8                     u270:
+   445   0012B8  0E0E               	movlw	14
+   446   0012BA  1826               	xorwf	_tecla^0,w,c
+   447   0012BC  B4D8               	btfsc	status,2,c
+   448   0012BE  EF63  F009         	goto	u281
+   449   0012C2  EF65  F009         	goto	u280
+   450   0012C6                     u281:
+   451   0012C6  EF97  F009         	goto	l1219
+   452   0012CA                     u280:
+   453   0012CA  0E0F               	movlw	15
+   454   0012CC  1826               	xorwf	_tecla^0,w,c
+   455   0012CE  B4D8               	btfsc	status,2,c
+   456   0012D0  EF6C  F009         	goto	u291
+   457   0012D4  EF6E  F009         	goto	u290
+   458   0012D8                     u291:
+   459   0012D8  EF97  F009         	goto	l1219
+   460   0012DC                     u290:
+   461   0012DC                     
+   462                           ;main_display_teclado_wiegand.c: 141:                 {;main_display_teclado_wiegand.c: 
+      +                          142:                     contador_digitos++;
+   463   0012DC  2A25               	incf	main@contador_digitos^0,f,c
+   464   0012DE                     
+   465                           ;main_display_teclado_wiegand.c: 143:                     d1 = d2;
+   466   0012DE  C00E  F00F         	movff	_d2,_d1
+   467   0012E2                     
+   468                           ;main_display_teclado_wiegand.c: 144:                     d2 = d3;
+   469   0012E2  C00D  F00E         	movff	_d3,_d2
+   470   0012E6                     
+   471                           ;main_display_teclado_wiegand.c: 145:                     d3 = d4;
+   472   0012E6  C00C  F00D         	movff	_d4,_d3
+   473   0012EA                     
+   474                           ;main_display_teclado_wiegand.c: 146:                     d4 = segmentos[tecla];
+   475   0012EA  5026               	movf	_tecla^0,w,c
+   476   0012EC  0FC7               	addlw	low _segmentos
+   477   0012EE  6E23               	movwf	??_main^0,c
+   478   0012F0  C023  FFF6         	movff	??_main,tblptrl
+   479   0012F4                     	if	1	;There is more than 1 active tblptr byte
+   480   0012F4  0E11               	movlw	high __smallconst
+   481   0012F6  6EF7               	movwf	tblptrh,c
+   482   0012F8                     	endif
+   483   0012F8                     	if	0	;tblptru may be non-zero
+   484   0012F8                     	endif
+   485   0012F8                     	if	0	;tblptru may be non-zero
+   486   0012F8                     	endif
+   487   0012F8  0008               	tblrd		*
+   488   0012FA  CFF5 F00C          	movff	tablat,_d4
+   489   0012FE                     
+   490                           ;main_display_teclado_wiegand.c: 147:                     LATAbits.LATA3=0;
+   491   0012FE  9689               	bcf	137,3,c	;volatile
+   492   001300                     
+   493                           ;main_display_teclado_wiegand.c: 148:                     _delay((unsigned long)((50)*(4
+      +                          8000000/4000.0)));
+   494   001300  0E04               	movlw	4
+   495   001302  6E24               	movwf	(??_main+1)^0,c
+   496   001304  0E0C               	movlw	12
+   497   001306  6E23               	movwf	??_main^0,c
+   498   001308  0E34               	movlw	52
+   499   00130A                     u447:
+   500   00130A  2EE8               	decfsz	wreg,f,c
+   501   00130C  D7FE               	bra	u447
+   502   00130E  2E23               	decfsz	??_main^0,f,c
+   503   001310  D7FC               	bra	u447
+   504   001312  2E24               	decfsz	(??_main+1)^0,f,c
+   505   001314  D7FA               	bra	u447
+   506   001316                     
+   507                           ;main_display_teclado_wiegand.c: 149:                     LATAbits.LATA3=1;
+   508   001316  8689               	bsf	137,3,c	;volatile
+   509   001318                     
+   510                           ;main_display_teclado_wiegand.c: 150:                     _delay((unsigned long)((200)*(
+      +                          48000000/4000.0)));
+   511   001318  0E0D               	movlw	13
+   512   00131A  6E24               	movwf	(??_main+1)^0,c
+   513   00131C  0E2D               	movlw	45
+   514   00131E  6E23               	movwf	??_main^0,c
+   515   001320  0ED8               	movlw	216
+   516   001322                     u457:
+   517   001322  2EE8               	decfsz	wreg,f,c
+   518   001324  D7FE               	bra	u457
+   519   001326  2E23               	decfsz	??_main^0,f,c
+   520   001328  D7FC               	bra	u457
+   521   00132A  2E24               	decfsz	(??_main+1)^0,f,c
+   522   00132C  D7FA               	bra	u457
+   523   00132E                     l1219:
+   524                           
+   525                           ;main_display_teclado_wiegand.c: 153:             tecla=0xff;
+   526   00132E  6826               	setf	_tecla^0,c
+   527   001330  EFFB  F008         	goto	l1173
+   528   001334  EFE1  F008         	goto	start
+   529   001338                     __end_of_main:
+   530                           	callstack 0
+   531                           
+   532 ;; *************** function _config *****************
+   533 ;; Defined at:
+   534 ;;		line 15 in file "config.c"
+   535 ;; Parameters:    Size  Location     Type
+   536 ;;		None
+   537 ;; Auto vars:     Size  Location     Type
+   538 ;;		None
+   539 ;; Return value:  Size  Location     Type
+   540 ;;                  1    wreg      void 
+   541 ;; Registers used:
+   542 ;;		wreg, status,2
+   543 ;; Tracked objects:
+   544 ;;		On entry : 0/0
+   545 ;;		On exit  : 0/0
+   546 ;;		Unchanged: 0/0
+   547 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   548 ;;      Params:         0       0       0       0       0       0       0       0       0
+   549 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   550 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   551 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   552 ;;Total ram usage:        0 bytes
+   553 ;; Hardware stack levels used: 1
+   554 ;; Hardware stack levels required when called: 2
+   555 ;; This function calls:
+   556 ;;		Nothing
+   557 ;; This function is called by:
+   558 ;;		_main
+   559 ;; This function uses a non-reentrant model
+   560 ;;
+   561                           
+   562                           	psect	text1
+   563   001338                     __ptext1:
+   564                           	callstack 0
+   565   001338                     _config:
+   566                           	callstack 28
+   567   001338                     
+   568                           ;config.c: 19:         OSCCON=0x70;
+   569   001338  0E70               	movlw	112
+   570   00133A  6ED3               	movwf	211,c	;volatile
+   571                           
+   572                           ;config.c: 21:   OSCCON2=0x10;
+   573   00133C  0E10               	movlw	16
+   574   00133E  6ED2               	movwf	210,c	;volatile
+   575                           
+   576                           ;config.c: 22:   OSCTUNE=0x80;
+   577   001340  0E80               	movlw	128
+   578   001342  6E9B               	movwf	155,c	;volatile
+   579                           
+   580                           ;config.c: 28:     ANSELA=0;
+   581   001344  0E00               	movlw	0
+   582   001346  010F               	movlb	15	; () banked
+   583   001348  6F5B               	movwf	91,b	;volatile
+   584   00134A                     
+   585                           ; BSR set to: 15
+   586                           ;config.c: 29:     ANSELAbits.ANSA2=1;
+   587   00134A  855B               	bsf	91,2,b	;volatile
+   588   00134C                     
+   589                           ; BSR set to: 15
+   590                           ;config.c: 31:     TRISAbits.RA0=0;
+   591   00134C  9092               	bcf	146,0,c	;volatile
+   592   00134E                     
+   593                           ; BSR set to: 15
+   594                           ;config.c: 32:     TRISAbits.RA3=0;
+   595   00134E  9692               	bcf	146,3,c	;volatile
+   596   001350                     
+   597                           ; BSR set to: 15
+   598                           ;config.c: 33:     TRISAbits.RA1=0;
+   599   001350  9292               	bcf	146,1,c	;volatile
+   600   001352                     
+   601                           ; BSR set to: 15
+   602                           ;config.c: 34:     TRISAbits.RA4=0;
+   603   001352  9892               	bcf	146,4,c	;volatile
+   604   001354                     
+   605                           ; BSR set to: 15
+   606                           ;config.c: 35:     TRISAbits.RA5=0;
+   607   001354  9A92               	bcf	146,5,c	;volatile
+   608   001356                     
+   609                           ; BSR set to: 15
+   610                           ;config.c: 36:     TRISAbits.RA6=0;
+   611   001356  9C92               	bcf	146,6,c	;volatile
+   612   001358                     
+   613                           ; BSR set to: 15
+   614                           ;config.c: 37:     TRISBbits.RB0=1;
+   615   001358  8093               	bsf	147,0,c	;volatile
+   616   00135A                     
+   617                           ; BSR set to: 15
+   618                           ;config.c: 38:     TRISBbits.RB5=0;
+   619   00135A  9A93               	bcf	147,5,c	;volatile
+   620   00135C                     
+   621                           ; BSR set to: 15
+   622                           ;config.c: 39:     TRISBbits.RB6=0;
+   623   00135C  9C93               	bcf	147,6,c	;volatile
+   624                           
+   625                           ;config.c: 41:     ANSELC=0;
+   626   00135E  0E00               	movlw	0
+   627   001360  6F5D               	movwf	93,b	;volatile
+   628   001362                     
+   629                           ; BSR set to: 15
+   630                           ;config.c: 42:     TRISCbits.RC0=0;
+   631   001362  9094               	bcf	148,0,c	;volatile
+   632   001364                     
+   633                           ; BSR set to: 15
+   634                           ;config.c: 43:     TRISCbits.RC1=0;
+   635   001364  9294               	bcf	148,1,c	;volatile
+   636                           
+   637                           ;config.c: 45:     ANSELD=0;
+   638   001366  0E00               	movlw	0
+   639   001368  6F5E               	movwf	94,b	;volatile
+   640   00136A                     
+   641                           ; BSR set to: 15
+   642                           ;config.c: 47:     TRISDbits.RD4=0;
+   643   00136A  9895               	bcf	149,4,c	;volatile
+   644   00136C                     
+   645                           ; BSR set to: 15
+   646                           ;config.c: 48:     TRISDbits.RD5=0;
+   647   00136C  9A95               	bcf	149,5,c	;volatile
+   648   00136E                     
+   649                           ; BSR set to: 15
+   650                           ;config.c: 49:     TRISDbits.RD6=0;
+   651   00136E  9C95               	bcf	149,6,c	;volatile
+   652   001370                     
+   653                           ; BSR set to: 15
+   654                           ;config.c: 50:     TRISDbits.RD7=0;
+   655   001370  9E95               	bcf	149,7,c	;volatile
+   656   001372                     
+   657                           ; BSR set to: 15
+   658                           ;config.c: 52:     TRISDbits.RD3=1;
+   659   001372  8695               	bsf	149,3,c	;volatile
+   660   001374                     
+   661                           ; BSR set to: 15
+   662                           ;config.c: 53:     TRISDbits.RD2=1;
+   663   001374  8495               	bsf	149,2,c	;volatile
+   664   001376                     
+   665                           ; BSR set to: 15
+   666                           ;config.c: 54:     TRISDbits.RD1=1;
+   667   001376  8295               	bsf	149,1,c	;volatile
+   668   001378                     
+   669                           ; BSR set to: 15
+   670                           ;config.c: 55:     TRISDbits.RD0=1;
+   671   001378  8095               	bsf	149,0,c	;volatile
+   672                           
+   673                           ;config.c: 57:     ANSELE=0;
+   674   00137A  0E00               	movlw	0
+   675   00137C  6F5F               	movwf	95,b	;volatile
+   676                           
+   677                           ;config.c: 59:     TRISE=0;
+   678   00137E  0E00               	movlw	0
+   679   001380  6E96               	movwf	150,c	;volatile
+   680                           
+   681                           ;config.c: 63:     INTCON=0;
+   682   001382  0E00               	movlw	0
+   683   001384  6EF2               	movwf	242,c	;volatile
+   684   001386                     
+   685                           ; BSR set to: 15
+   686                           ;config.c: 64:     RCONbits.IPEN=1;
+   687   001386  8ED0               	bsf	208,7,c	;volatile
+   688   001388                     
+   689                           ; BSR set to: 15
+   690                           ;config.c: 65:     INTCONbits.INT0E=1;
+   691   001388  88F2               	bsf	242,4,c	;volatile
+   692   00138A                     
+   693                           ; BSR set to: 15
+   694                           ;config.c: 66:     INTCON2bits.INTEDG0=0;
+   695   00138A  9CF1               	bcf	241,6,c	;volatile
+   696   00138C                     
+   697                           ; BSR set to: 15
+   698                           ;config.c: 67:     INTCONbits.GIEH=1;
+   699   00138C  8EF2               	bsf	242,7,c	;volatile
+   700   00138E                     
+   701                           ; BSR set to: 15
+   702                           ;config.c: 68:     INTCONbits.GIEL=1;
+   703   00138E  8CF2               	bsf	242,6,c	;volatile
+   704   001390                     
+   705                           ; BSR set to: 15
+   706                           ;config.c: 69:     INTCONbits.T0IE=1;
+   707   001390  8AF2               	bsf	242,5,c	;volatile
+   708   001392                     
+   709                           ; BSR set to: 15
+   710                           ;config.c: 70:     INTCON2bits.T0IP=0;
+   711   001392  94F1               	bcf	241,2,c	;volatile
+   712   001394                     
+   713                           ; BSR set to: 15
+   714                           ;config.c: 71:     PIE1bits.RCIE=1;
+   715   001394  8A9D               	bsf	157,5,c	;volatile
+   716   001396                     
+   717                           ; BSR set to: 15
+   718                           ;config.c: 72:     IPR1bits.RCIP=1;
+   719   001396  8A9F               	bsf	159,5,c	;volatile
+   720   001398                     
+   721                           ; BSR set to: 15
+   722                           ;config.c: 75:     T0CONbits.T08BIT=0;
+   723   001398  9CD5               	bcf	213,6,c	;volatile
+   724   00139A                     
+   725                           ; BSR set to: 15
+   726                           ;config.c: 76:     T0CONbits.T0CS=0;
+   727   00139A  9AD5               	bcf	213,5,c	;volatile
+   728   00139C                     
+   729                           ; BSR set to: 15
+   730                           ;config.c: 77:     T0CONbits.PSA=0;
+   731   00139C  96D5               	bcf	213,3,c	;volatile
+   732                           
+   733                           ;config.c: 78:     T0CONbits.T0PS=1;
+   734   00139E  50D5               	movf	213,w,c	;volatile
+   735   0013A0  0BF8               	andlw	-8
+   736   0013A2  0901               	iorlw	1
+   737   0013A4  6ED5               	movwf	213,c	;volatile
+   738                           
+   739                           ;config.c: 82:     TMR0H=0xd1;;
+   740   0013A6  0ED1               	movlw	209
+   741   0013A8  6ED7               	movwf	215,c	;volatile
+   742                           
+   743                           ;config.c: 83:     TMR0L=0x1f;;
+   744   0013AA  0E1F               	movlw	31
+   745   0013AC  6ED6               	movwf	214,c	;volatile
+   746                           
+   747                           ;config.c: 87:     SPBRG1 = 0x4d;
+   748   0013AE  0E4D               	movlw	77
+   749   0013B0  6EAF               	movwf	175,c	;volatile
+   750                           
+   751                           ;config.c: 88:     SPBRGH1 = 0;
+   752   0013B2  0E00               	movlw	0
+   753   0013B4  6EB0               	movwf	176,c	;volatile
+   754   0013B6                     
+   755                           ; BSR set to: 15
+   756                           ;config.c: 89:     TXSTA1bits.BRGH=0;
+   757   0013B6  94AC               	bcf	172,2,c	;volatile
+   758   0013B8                     
+   759                           ; BSR set to: 15
+   760                           ;config.c: 90:     TXSTA1bits.TX9=0;
+   761   0013B8  9CAC               	bcf	172,6,c	;volatile
+   762   0013BA                     
+   763                           ; BSR set to: 15
+   764                           ;config.c: 91:     TXSTA1bits.TXEN=1;
+   765   0013BA  8AAC               	bsf	172,5,c	;volatile
+   766   0013BC                     
+   767                           ; BSR set to: 15
+   768                           ;config.c: 92:     TXSTA1bits.SYNC=0;
+   769   0013BC  98AC               	bcf	172,4,c	;volatile
+   770   0013BE                     
+   771                           ; BSR set to: 15
+   772                           ;config.c: 93:     RCSTA1bits.RX9=0;
+   773   0013BE  9CAB               	bcf	171,6,c	;volatile
+   774   0013C0                     
+   775                           ; BSR set to: 15
+   776                           ;config.c: 94:     RCSTA1bits.CREN=1;
+   777   0013C0  88AB               	bsf	171,4,c	;volatile
+   778                           
+   779                           ;config.c: 95:     BAUDCON1=0x40;
+   780   0013C2  0E40               	movlw	64
+   781   0013C4  6EB8               	movwf	184,c	;volatile
+   782   0013C6                     
+   783                           ; BSR set to: 15
+   784                           ;config.c: 96:     RCSTA1bits.SPEN=1;
+   785   0013C6  8EAB               	bsf	171,7,c	;volatile
+   786   0013C8                     
+   787                           ; BSR set to: 15
+   788   0013C8  0012               	return		;funcret
+   789   0013CA                     __end_of_config:
+   790                           	callstack 0
+   791                           
+   792 ;; *************** function _conf_wig *****************
+   793 ;; Defined at:
+   794 ;;		line 99 in file "wiegand.c"
+   795 ;; Parameters:    Size  Location     Type
+   796 ;;		None
+   797 ;; Auto vars:     Size  Location     Type
+   798 ;;		None
+   799 ;; Return value:  Size  Location     Type
+   800 ;;                  1    wreg      void 
+   801 ;; Registers used:
+   802 ;;		wreg, status,2
+   803 ;; Tracked objects:
+   804 ;;		On entry : 0/0
+   805 ;;		On exit  : 0/0
+   806 ;;		Unchanged: 0/0
+   807 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   808 ;;      Params:         0       0       0       0       0       0       0       0       0
+   809 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   810 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   811 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   812 ;;Total ram usage:        0 bytes
+   813 ;; Hardware stack levels used: 1
+   814 ;; Hardware stack levels required when called: 2
+   815 ;; This function calls:
+   816 ;;		Nothing
+   817 ;; This function is called by:
+   818 ;;		_main
+   819 ;; This function uses a non-reentrant model
+   820 ;;
+   821                           
+   822                           	psect	text2
+   823   00146E                     __ptext2:
+   824                           	callstack 0
+   825   00146E                     _conf_wig:
+   826                           	callstack 28
+   827   00146E                     
+   828                           ;wiegand.c: 101:     ANSELA=0;
+   829   00146E  0E00               	movlw	0
+   830   001470  010F               	movlb	15	; () banked
+   831   001472  6F5B               	movwf	91,b	;volatile
+   832                           
+   833                           ;wiegand.c: 102:     ANSELB=0;
+   834   001474  0E00               	movlw	0
+   835   001476  6F5C               	movwf	92,b	;volatile
+   836                           
+   837                           ;wiegand.c: 103:     ANSELC=0;
+   838   001478  0E00               	movlw	0
+   839   00147A  6F5D               	movwf	93,b	;volatile
+   840   00147C                     
+   841                           ; BSR set to: 15
+   842                           ;wiegand.c: 106:     TRISBbits.RB1=1;
+   843   00147C  8293               	bsf	147,1,c	;volatile
+   844   00147E                     
+   845                           ; BSR set to: 15
+   846                           ;wiegand.c: 107:     TRISBbits.RB2=1;
+   847   00147E  8493               	bsf	147,2,c	;volatile
+   848   001480                     
+   849                           ; BSR set to: 15
+   850                           ;wiegand.c: 109:     INTCON2bits.INTEDG1=0;
+   851   001480  9AF1               	bcf	241,5,c	;volatile
+   852   001482                     
+   853                           ; BSR set to: 15
+   854                           ;wiegand.c: 110:     INTCON2bits.INTEDG2=0;
+   855   001482  98F1               	bcf	241,4,c	;volatile
+   856   001484                     
+   857                           ; BSR set to: 15
+   858                           ;wiegand.c: 111:     INTCON3bits.INT1E=1;
+   859   001484  86F0               	bsf	240,3,c	;volatile
+   860   001486                     
+   861                           ; BSR set to: 15
+   862                           ;wiegand.c: 112:     INTCON3bits.INT2E=1;
+   863   001486  88F0               	bsf	240,4,c	;volatile
+   864   001488                     
+   865                           ; BSR set to: 15
+   866                           ;wiegand.c: 113:     INTCON3bits.INT1IP=1;
+   867   001488  8CF0               	bsf	240,6,c	;volatile
+   868   00148A                     
+   869                           ; BSR set to: 15
+   870                           ;wiegand.c: 114:     INTCON3bits.INT2IP=1;
+   871   00148A  8EF0               	bsf	240,7,c	;volatile
+   872   00148C                     
+   873                           ; BSR set to: 15
+   874   00148C  0012               	return		;funcret
+   875   00148E                     __end_of_conf_wig:
+   876                           	callstack 0
+   877                           
+   878 ;; *************** function _lint *****************
+   879 ;; Defined at:
+   880 ;;		line 45 in file "main_display_teclado_wiegand.c"
+   881 ;; Parameters:    Size  Location     Type
+   882 ;;		None
+   883 ;; Auto vars:     Size  Location     Type
+   884 ;;  fila            1   12[COMRAM] unsigned char 
+   885 ;; Return value:  Size  Location     Type
+   886 ;;                  1    wreg      void 
+   887 ;; Registers used:
+   888 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   889 ;; Tracked objects:
+   890 ;;		On entry : 0/0
+   891 ;;		On exit  : 0/0
+   892 ;;		Unchanged: 0/0
+   893 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   894 ;;      Params:         0       0       0       0       0       0       0       0       0
+   895 ;;      Locals:         1       0       0       0       0       0       0       0       0
+   896 ;;      Temps:          9       0       0       0       0       0       0       0       0
+   897 ;;      Totals:        10       0       0       0       0       0       0       0       0
+   898 ;;Total ram usage:       10 bytes
+   899 ;; Hardware stack levels used: 1
+   900 ;; Hardware stack levels required when called: 1
+   901 ;; This function calls:
+   902 ;;		_det_fila
+   903 ;;		_shift
+   904 ;; This function is called by:
+   905 ;;		Interrupt level 1
+   906 ;; This function uses a non-reentrant model
+   907 ;;
+   908                           
+   909                           	psect	intcodelo
+   910   001018                     __pintcodelo:
+   911                           	callstack 0
+   912   001018                     _lint:
+   913                           	callstack 28
+   914                           
+   915                           ; BSR set to: 15
+   916                           ;incstack = 0
+   917   001018  8027               	bsf	int$flags,0,c	;set compiler interrupt flag (level 1)
+   918   00101A  CFD8 F01B          	movff	status,??_lint+2
+   919   00101E  CFE8 F01C          	movff	wreg,??_lint+3
+   920   001022  CFE0 F01D          	movff	bsr,??_lint+4
+   921   001026  CFF6 F01E          	movff	tblptrl,??_lint+5
+   922   00102A  CFF7 F01F          	movff	tblptrh,??_lint+6
+   923   00102E  CFF8 F020          	movff	tblptru,??_lint+7
+   924   001032  CFF5 F021          	movff	tablat,??_lint+8
+   925   001036                     
+   926                           ;main_display_teclado_wiegand.c: 48:         char static rota;;main_display_teclado_wieg
+      +                          and.c: 49:         static unsigned int pulso=0;;main_display_teclado_wiegand.c: 50:     
+      +                              if(INTCONbits.TMR0IF){
+   927   001036  A4F2               	btfss	242,2,c	;volatile
+   928   001038  EF20  F008         	goto	i1u15_21
+   929   00103C  EF22  F008         	goto	i1u15_20
+   930   001040                     i1u15_21:
+   931   001040  EFD1  F008         	goto	i1l96
+   932   001044                     i1u15_20:
+   933   001044                     
+   934                           ;main_display_teclado_wiegand.c: 51:             TMR0H=0xd1;;
+   935   001044  0ED1               	movlw	209
+   936   001046  6ED7               	movwf	215,c	;volatile
+   937                           
+   938                           ;main_display_teclado_wiegand.c: 52:             TMR0L=0x1f;;
+   939   001048  0E1F               	movlw	31
+   940   00104A  6ED6               	movwf	214,c	;volatile
+   941   00104C                     
+   942                           ;main_display_teclado_wiegand.c: 54:         if (rota>=4)rota=1;
+   943   00104C  0E03               	movlw	3
+   944   00104E  640B               	cpfsgt	lint@rota^0,c
+   945   001050  EF2C  F008         	goto	i1u16_21
+   946   001054  EF2E  F008         	goto	i1u16_20
+   947   001058                     i1u16_21:
+   948   001058  EF32  F008         	goto	i1l1129
+   949   00105C                     i1u16_20:
+   950   00105C  0E01               	movlw	1
+   951   00105E  6E0B               	movwf	lint@rota^0,c
+   952   001060  EFBD  F008         	goto	i1l1165
+   953   001064                     i1l1129:
+   954                           
+   955                           ;main_display_teclado_wiegand.c: 56:                 rota++;
+   956   001064  2A0B               	incf	lint@rota^0,f,c
+   957   001066  EFBD  F008         	goto	i1l1165
+   958   00106A                     i1l87:
+   959                           
+   960                           ;main_display_teclado_wiegand.c: 63:                 LATCbits.LATC1=1;
+   961   00106A  828B               	bsf	139,1,c	;volatile
+   962                           
+   963                           ;main_display_teclado_wiegand.c: 64:                 LATEbits.LATE2=1;
+   964   00106C  848D               	bsf	141,2,c	;volatile
+   965                           
+   966                           ;main_display_teclado_wiegand.c: 65:                 LATEbits.LATE1=1;
+   967   00106E  828D               	bsf	141,1,c	;volatile
+   968                           
+   969                           ;main_display_teclado_wiegand.c: 66:                 LATEbits.LATE0=0;
+   970   001070  908D               	bcf	141,0,c	;volatile
+   971   001072                     
+   972                           ;main_display_teclado_wiegand.c: 67:                 shift(d1);
+   973   001072  500F               	movf	_d1^0,w,c
+   974   001074  ECE5  F009         	call	_shift
+   975   001078                     
+   976                           ;main_display_teclado_wiegand.c: 69:                 fila=det_fila();
+   977   001078  EC0F  F00A         	call	_det_fila	;wreg free
+   978   00107C  6E22               	movwf	lint@fila^0,c
+   979   00107E                     
+   980                           ;main_display_teclado_wiegand.c: 72:                 if(fila!=0) tecla=c1[fila-1];
+   981   00107E  5022               	movf	lint@fila^0,w,c
+   982   001080  B4D8               	btfsc	status,2,c
+   983   001082  EF45  F008         	goto	i1u17_21
+   984   001086  EF47  F008         	goto	i1u17_20
+   985   00108A                     i1u17_21:
+   986   00108A  EFD0  F008         	goto	i1l89
+   987   00108E                     i1u17_20:
+   988   00108E  C022  F019         	movff	lint@fila,??_lint
+   989   001092  0EFF               	movlw	255
+   990   001094  2619               	addwf	??_lint^0,f,c
+   991   001096  5019               	movf	??_lint^0,w,c
+   992   001098  0FE3               	addlw	low _c1
+   993   00109A  6E1A               	movwf	(??_lint+1)^0,c
+   994   00109C  C01A  FFF6         	movff	??_lint+1,tblptrl
+   995   0010A0                     	if	1	;There is more than 1 active tblptr byte
+   996   0010A0  0E11               	movlw	high __smallconst
+   997   0010A2  6EF7               	movwf	tblptrh,c
+   998   0010A4                     	endif
+   999   0010A4                     	if	0	;tblptru may be non-zero
+  1000   0010A4                     	endif
+  1001   0010A4                     	if	0	;tblptru may be non-zero
+  1002   0010A4                     	endif
+  1003   0010A4  0008               	tblrd		*
+  1004   0010A6  CFF5 F026          	movff	tablat,_tecla
+  1005   0010AA  EFD0  F008         	goto	i1l89
+  1006   0010AE                     i1l90:
+  1007                           
+  1008                           ;main_display_teclado_wiegand.c: 77:                 LATCbits.LATC1=1;
+  1009   0010AE  828B               	bsf	139,1,c	;volatile
+  1010                           
+  1011                           ;main_display_teclado_wiegand.c: 78:                 LATEbits.LATE2=1;
+  1012   0010B0  848D               	bsf	141,2,c	;volatile
+  1013                           
+  1014                           ;main_display_teclado_wiegand.c: 79:                 LATEbits.LATE1=0;
+  1015   0010B2  928D               	bcf	141,1,c	;volatile
+  1016                           
+  1017                           ;main_display_teclado_wiegand.c: 80:                 LATEbits.LATE0=1;
+  1018   0010B4  808D               	bsf	141,0,c	;volatile
+  1019   0010B6                     
+  1020                           ;main_display_teclado_wiegand.c: 81:                 shift(d2);
+  1021   0010B6  500E               	movf	_d2^0,w,c
+  1022   0010B8  ECE5  F009         	call	_shift
+  1023   0010BC                     
+  1024                           ;main_display_teclado_wiegand.c: 83:                 fila=det_fila();
+  1025   0010BC  EC0F  F00A         	call	_det_fila	;wreg free
+  1026   0010C0  6E22               	movwf	lint@fila^0,c
+  1027   0010C2                     
+  1028                           ;main_display_teclado_wiegand.c: 85:                 if(fila!=0) tecla=c2[fila-1];
+  1029   0010C2  5022               	movf	lint@fila^0,w,c
+  1030   0010C4  B4D8               	btfsc	status,2,c
+  1031   0010C6  EF67  F008         	goto	i1u18_21
+  1032   0010CA  EF69  F008         	goto	i1u18_20
+  1033   0010CE                     i1u18_21:
+  1034   0010CE  EFD0  F008         	goto	i1l89
+  1035   0010D2                     i1u18_20:
+  1036   0010D2  C022  F019         	movff	lint@fila,??_lint
+  1037   0010D6  0EFF               	movlw	255
+  1038   0010D8  2619               	addwf	??_lint^0,f,c
+  1039   0010DA  5019               	movf	??_lint^0,w,c
+  1040   0010DC  0FDF               	addlw	low _c2
+  1041   0010DE  6E1A               	movwf	(??_lint+1)^0,c
+  1042   0010E0  C01A  FFF6         	movff	??_lint+1,tblptrl
+  1043   0010E4                     	if	1	;There is more than 1 active tblptr byte
+  1044   0010E4  0E11               	movlw	high __smallconst
+  1045   0010E6  6EF7               	movwf	tblptrh,c
+  1046   0010E8                     	endif
+  1047   0010E8                     	if	0	;tblptru may be non-zero
+  1048   0010E8                     	endif
+  1049   0010E8                     	if	0	;tblptru may be non-zero
+  1050   0010E8                     	endif
+  1051   0010E8  0008               	tblrd		*
+  1052   0010EA  CFF5 F026          	movff	tablat,_tecla
+  1053   0010EE  EFD0  F008         	goto	i1l89
+  1054   0010F2                     i1l92:
+  1055                           
+  1056                           ;main_display_teclado_wiegand.c: 89:                 LATCbits.LATC1=1;
+  1057   0010F2  828B               	bsf	139,1,c	;volatile
+  1058                           
+  1059                           ;main_display_teclado_wiegand.c: 90:                 LATEbits.LATE2=0;
+  1060   0010F4  948D               	bcf	141,2,c	;volatile
+  1061                           
+  1062                           ;main_display_teclado_wiegand.c: 91:                 LATEbits.LATE1=1;
+  1063   0010F6  828D               	bsf	141,1,c	;volatile
+  1064                           
+  1065                           ;main_display_teclado_wiegand.c: 92:                 LATEbits.LATE0=1;
+  1066   0010F8  808D               	bsf	141,0,c	;volatile
+  1067   0010FA                     
+  1068                           ;main_display_teclado_wiegand.c: 94:                 shift(d3);
+  1069   0010FA  500D               	movf	_d3^0,w,c
+  1070   0010FC  ECE5  F009         	call	_shift
+  1071   001100                     
+  1072                           ;main_display_teclado_wiegand.c: 96:                 fila=det_fila();
+  1073   001100  EC0F  F00A         	call	_det_fila	;wreg free
+  1074   001104  6E22               	movwf	lint@fila^0,c
+  1075   001106                     
+  1076                           ;main_display_teclado_wiegand.c: 99:                 if(fila!=0) tecla=c3[fila-1];
+  1077   001106  5022               	movf	lint@fila^0,w,c
+  1078   001108  B4D8               	btfsc	status,2,c
+  1079   00110A  EF89  F008         	goto	i1u19_21
+  1080   00110E  EF8B  F008         	goto	i1u19_20
+  1081   001112                     i1u19_21:
+  1082   001112  EFD0  F008         	goto	i1l89
+  1083   001116                     i1u19_20:
+  1084   001116  C022  F019         	movff	lint@fila,??_lint
+  1085   00111A  0EFF               	movlw	255
+  1086   00111C  2619               	addwf	??_lint^0,f,c
+  1087   00111E  5019               	movf	??_lint^0,w,c
+  1088   001120  0FDB               	addlw	low _c3
+  1089   001122  6E1A               	movwf	(??_lint+1)^0,c
+  1090   001124  C01A  FFF6         	movff	??_lint+1,tblptrl
+  1091   001128                     	if	1	;There is more than 1 active tblptr byte
+  1092   001128  0E11               	movlw	high __smallconst
+  1093   00112A  6EF7               	movwf	tblptrh,c
+  1094   00112C                     	endif
+  1095   00112C                     	if	0	;tblptru may be non-zero
+  1096   00112C                     	endif
+  1097   00112C                     	if	0	;tblptru may be non-zero
+  1098   00112C                     	endif
+  1099   00112C  0008               	tblrd		*
+  1100   00112E  CFF5 F026          	movff	tablat,_tecla
+  1101   001132  EFD0  F008         	goto	i1l89
+  1102   001136                     i1l94:
+  1103                           
+  1104                           ;main_display_teclado_wiegand.c: 102:                 LATCbits.LATC1=0;
+  1105   001136  928B               	bcf	139,1,c	;volatile
+  1106                           
+  1107                           ;main_display_teclado_wiegand.c: 103:                 LATEbits.LATE2=1;
+  1108   001138  848D               	bsf	141,2,c	;volatile
+  1109                           
+  1110                           ;main_display_teclado_wiegand.c: 104:                 LATEbits.LATE1=1;
+  1111   00113A  828D               	bsf	141,1,c	;volatile
+  1112                           
+  1113                           ;main_display_teclado_wiegand.c: 105:                 LATEbits.LATE0=1;
+  1114   00113C  808D               	bsf	141,0,c	;volatile
+  1115   00113E                     
+  1116                           ;main_display_teclado_wiegand.c: 107:                 shift(d4);
+  1117   00113E  500C               	movf	_d4^0,w,c
+  1118   001140  ECE5  F009         	call	_shift
+  1119   001144                     
+  1120                           ;main_display_teclado_wiegand.c: 109:                 fila=det_fila();
+  1121   001144  EC0F  F00A         	call	_det_fila	;wreg free
+  1122   001148  6E22               	movwf	lint@fila^0,c
+  1123   00114A                     
+  1124                           ;main_display_teclado_wiegand.c: 111:                 if(fila!=0) tecla=c4[fila-1];
+  1125   00114A  5022               	movf	lint@fila^0,w,c
+  1126   00114C  B4D8               	btfsc	status,2,c
+  1127   00114E  EFAB  F008         	goto	i1u20_21
+  1128   001152  EFAD  F008         	goto	i1u20_20
+  1129   001156                     i1u20_21:
+  1130   001156  EFD0  F008         	goto	i1l89
+  1131   00115A                     i1u20_20:
+  1132   00115A  C022  F019         	movff	lint@fila,??_lint
+  1133   00115E  0EFF               	movlw	255
+  1134   001160  2619               	addwf	??_lint^0,f,c
+  1135   001162  5019               	movf	??_lint^0,w,c
+  1136   001164  0FD7               	addlw	low _c4
+  1137   001166  6E1A               	movwf	(??_lint+1)^0,c
+  1138   001168  C01A  FFF6         	movff	??_lint+1,tblptrl
+  1139   00116C                     	if	1	;There is more than 1 active tblptr byte
+  1140   00116C  0E11               	movlw	high __smallconst
+  1141   00116E  6EF7               	movwf	tblptrh,c
+  1142   001170                     	endif
+  1143   001170                     	if	0	;tblptru may be non-zero
+  1144   001170                     	endif
+  1145   001170                     	if	0	;tblptru may be non-zero
+  1146   001170                     	endif
+  1147   001170  0008               	tblrd		*
+  1148   001172  CFF5 F026          	movff	tablat,_tecla
+  1149   001176  EFD0  F008         	goto	i1l89
+  1150   00117A                     i1l1165:
+  1151   00117A  500B               	movf	lint@rota^0,w,c
+  1152                           
+  1153                           ; Switch size 1, requested type "simple"
+  1154                           ; Number of cases is 4, Range of values is 1 to 4
+  1155                           ; switch strategies available:
+  1156                           ; Name         Instructions Cycles
+  1157                           ; simple_byte           13     7 (average)
+  1158                           ;	Chosen strategy is simple_byte
+  1159   00117C  0A01               	xorlw	1	; case 1
+  1160   00117E  B4D8               	btfsc	status,2,c
+  1161   001180  EF35  F008         	goto	i1l87
+  1162   001184  0A03               	xorlw	3	; case 2
+  1163   001186  B4D8               	btfsc	status,2,c
+  1164   001188  EF57  F008         	goto	i1l90
+  1165   00118C  0A01               	xorlw	1	; case 3
+  1166   00118E  B4D8               	btfsc	status,2,c
+  1167   001190  EF79  F008         	goto	i1l92
+  1168   001194  0A07               	xorlw	7	; case 4
+  1169   001196  B4D8               	btfsc	status,2,c
+  1170   001198  EF9B  F008         	goto	i1l94
+  1171   00119C  EFD0  F008         	goto	i1l89
+  1172   0011A0                     i1l89:
+  1173                           
+  1174                           ;main_display_teclado_wiegand.c: 114:         INTCONbits.TMR0IF=0;
+  1175   0011A0  94F2               	bcf	242,2,c	;volatile
+  1176   0011A2                     i1l96:
+  1177   0011A2  C021  FFF5         	movff	??_lint+8,tablat
+  1178   0011A6  C020  FFF8         	movff	??_lint+7,tblptru
+  1179   0011AA  C01F  FFF7         	movff	??_lint+6,tblptrh
+  1180   0011AE  C01E  FFF6         	movff	??_lint+5,tblptrl
+  1181   0011B2  C01D  FFE0         	movff	??_lint+4,bsr
+  1182   0011B6  C01C  FFE8         	movff	??_lint+3,wreg
+  1183   0011BA  C01B  FFD8         	movff	??_lint+2,status
+  1184   0011BE  9027               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
+  1185   0011C0  0010               	retfie	
+  1186   0011C2                     __end_of_lint:
+  1187                           	callstack 0
+  1188                           
+  1189 ;; *************** function _shift *****************
+  1190 ;; Defined at:
+  1191 ;;		line 192 in file "main_display_teclado_wiegand.c"
+  1192 ;; Parameters:    Size  Location     Type
+  1193 ;;  dato            1    wreg     unsigned char 
+  1194 ;; Auto vars:     Size  Location     Type
+  1195 ;;  dato            1    1[COMRAM] unsigned char 
+  1196 ;;  n               1    2[COMRAM] unsigned char 
+  1197 ;;  k               1    0[COMRAM] unsigned char 
+  1198 ;; Return value:  Size  Location     Type
+  1199 ;;                  1    wreg      void 
+  1200 ;; Registers used:
+  1201 ;;		wreg, status,2, status,0
+  1202 ;; Tracked objects:
+  1203 ;;		On entry : 0/0
+  1204 ;;		On exit  : 0/0
+  1205 ;;		Unchanged: 0/0
+  1206 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1207 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1208 ;;      Locals:         3       0       0       0       0       0       0       0       0
+  1209 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1210 ;;      Totals:         3       0       0       0       0       0       0       0       0
+  1211 ;;Total ram usage:        3 bytes
+  1212 ;; Hardware stack levels used: 1
+  1213 ;; This function calls:
+  1214 ;;		Nothing
+  1215 ;; This function is called by:
+  1216 ;;		_lint
+  1217 ;; This function uses a non-reentrant model
+  1218 ;;
+  1219                           
+  1220                           	psect	text4
+  1221   0013CA                     __ptext4:
+  1222                           	callstack 0
+  1223   0013CA                     _shift:
+  1224                           	callstack 28
+  1225                           
+  1226                           ;incstack = 0
+  1227                           ;shift@dato stored from wreg
+  1228   0013CA  6E17               	movwf	shift@dato^0,c
+  1229   0013CC                     
+  1230                           ;main_display_teclado_wiegand.c: 196:     LATCbits.LATC0=1;
+  1231   0013CC  808B               	bsf	139,0,c	;volatile
+  1232                           
+  1233                           ;main_display_teclado_wiegand.c: 197:     LATBbits.LATB5=1;
+  1234   0013CE  8A8A               	bsf	138,5,c	;volatile
+  1235                           
+  1236                           ;main_display_teclado_wiegand.c: 200:     LATBbits.LATB5=0;
+  1237   0013D0  9A8A               	bcf	138,5,c	;volatile
+  1238                           
+  1239                           ;main_display_teclado_wiegand.c: 201:     LATBbits.LATB5=1;
+  1240   0013D2  8A8A               	bsf	138,5,c	;volatile
+  1241                           
+  1242                           ;main_display_teclado_wiegand.c: 204:     LATAbits.LATA5=0;
+  1243   0013D4  9A89               	bcf	137,5,c	;volatile
+  1244                           
+  1245                           ;main_display_teclado_wiegand.c: 205:     LATAbits.LATA4=0;
+  1246   0013D6  9889               	bcf	137,4,c	;volatile
+  1247   0013D8                     
+  1248                           ;main_display_teclado_wiegand.c: 208:     char n=0,k=0;
+  1249   0013D8  0E00               	movlw	0
+  1250   0013DA  6E18               	movwf	shift@n^0,c
+  1251                           
+  1252                           ;main_display_teclado_wiegand.c: 210:     for(n=0;n<=7;n++){
+  1253   0013DC  0E00               	movlw	0
+  1254   0013DE  6E18               	movwf	shift@n^0,c
+  1255   0013E0                     i1l120:
+  1256                           
+  1257                           ;main_display_teclado_wiegand.c: 212:      if(dato&0x1) LATCbits.LATC0=1;
+  1258   0013E0  A017               	btfss	shift@dato^0,0,c
+  1259   0013E2  EFF5  F009         	goto	i1u1_21
+  1260   0013E6  EFF7  F009         	goto	i1u1_20
+  1261   0013EA                     i1u1_21:
+  1262   0013EA  EFFA  F009         	goto	i1l122
+  1263   0013EE                     i1u1_20:
+  1264   0013EE  808B               	bsf	139,0,c	;volatile
+  1265   0013F0  EFFB  F009         	goto	i1l941
+  1266   0013F4                     i1l122:
+  1267   0013F4  908B               	bcf	139,0,c	;volatile
+  1268   0013F6                     i1l941:
+  1269                           
+  1270                           ;main_display_teclado_wiegand.c: 216:      k=dato>>1;
+  1271   0013F6  90D8               	bcf	status,0,c
+  1272   0013F8  3017               	rrcf	shift@dato^0,w,c
+  1273   0013FA  6E16               	movwf	shift@k^0,c
+  1274   0013FC                     
+  1275                           ;main_display_teclado_wiegand.c: 217:      dato=k;
+  1276   0013FC  C016  F017         	movff	shift@k,shift@dato
+  1277   001400                     
+  1278                           ;main_display_teclado_wiegand.c: 220:     LATAbits.LATA4=0;
+  1279   001400  9889               	bcf	137,4,c	;volatile
+  1280   001402                     
+  1281                           ;main_display_teclado_wiegand.c: 221:     LATAbits.LATA4=1;
+  1282   001402  8889               	bsf	137,4,c	;volatile
+  1283   001404                     
+  1284                           ;main_display_teclado_wiegand.c: 222:     LATAbits.LATA4=0;
+  1285   001404  9889               	bcf	137,4,c	;volatile
+  1286   001406                     
+  1287                           ;main_display_teclado_wiegand.c: 226:     }
+  1288   001406  2A18               	incf	shift@n^0,f,c
+  1289   001408  0E07               	movlw	7
+  1290   00140A  6418               	cpfsgt	shift@n^0,c
+  1291   00140C  EF0A  F00A         	goto	i1u2_21
+  1292   001410  EF0C  F00A         	goto	i1u2_20
+  1293   001414                     i1u2_21:
+  1294   001414  EFF0  F009         	goto	i1l120
+  1295   001418                     i1u2_20:
+  1296   001418                     
+  1297                           ;main_display_teclado_wiegand.c: 228:     LATAbits.LATA5=1;
+  1298   001418  8A89               	bsf	137,5,c	;volatile
+  1299                           
+  1300                           ;main_display_teclado_wiegand.c: 229:     LATAbits.LATA5=0;
+  1301   00141A  9A89               	bcf	137,5,c	;volatile
+  1302   00141C  0012               	return		;funcret
+  1303   00141E                     __end_of_shift:
+  1304                           	callstack 0
+  1305                           
+  1306 ;; *************** function _det_fila *****************
+  1307 ;; Defined at:
+  1308 ;;		line 233 in file "main_display_teclado_wiegand.c"
+  1309 ;; Parameters:    Size  Location     Type
+  1310 ;;		None
+  1311 ;; Auto vars:     Size  Location     Type
+  1312 ;;  fila            1    0[COMRAM] volatile unsigned char 
+  1313 ;; Return value:  Size  Location     Type
+  1314 ;;                  1    wreg      unsigned char 
+  1315 ;; Registers used:
+  1316 ;;		wreg, status,2
+  1317 ;; Tracked objects:
+  1318 ;;		On entry : 0/0
+  1319 ;;		On exit  : 0/0
+  1320 ;;		Unchanged: 0/0
+  1321 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1322 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1323 ;;      Locals:         1       0       0       0       0       0       0       0       0
+  1324 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1325 ;;      Totals:         1       0       0       0       0       0       0       0       0
+  1326 ;;Total ram usage:        1 bytes
+  1327 ;; Hardware stack levels used: 1
+  1328 ;; This function calls:
+  1329 ;;		Nothing
+  1330 ;; This function is called by:
+  1331 ;;		_lint
+  1332 ;; This function uses a non-reentrant model
+  1333 ;;
+  1334                           
+  1335                           	psect	text5
+  1336   00141E                     __ptext5:
+  1337                           	callstack 0
+  1338   00141E                     _det_fila:
+  1339                           	callstack 28
+  1340   00141E                     
+  1341                           ;main_display_teclado_wiegand.c: 234:     volatile char fila=0;
+  1342   00141E  0E00               	movlw	0
+  1343   001420  6E16               	movwf	det_fila@fila^0,c	;volatile
+  1344   001422                     
+  1345                           ;main_display_teclado_wiegand.c: 235:     if((PORTD&0x01)==0){
+  1346   001422  B083               	btfsc	131,0,c	;volatile
+  1347   001424  EF16  F00A         	goto	i1u3_21
+  1348   001428  EF18  F00A         	goto	i1u3_20
+  1349   00142C                     i1u3_21:
+  1350   00142C  EF1A  F00A         	goto	i1l961
+  1351   001430                     i1u3_20:
+  1352   001430                     
+  1353                           ;main_display_teclado_wiegand.c: 236:         fila=1;
+  1354   001430  0E01               	movlw	1
+  1355   001432  6E16               	movwf	det_fila@fila^0,c	;volatile
+  1356   001434                     i1l961:
+  1357                           
+  1358                           ;main_display_teclado_wiegand.c: 238:     if((PORTD&0x02)==0){
+  1359   001434  B283               	btfsc	131,1,c	;volatile
+  1360   001436  EF1F  F00A         	goto	i1u4_21
+  1361   00143A  EF21  F00A         	goto	i1u4_20
+  1362   00143E                     i1u4_21:
+  1363   00143E  EF23  F00A         	goto	i1l965
+  1364   001442                     i1u4_20:
+  1365   001442                     
+  1366                           ;main_display_teclado_wiegand.c: 239:         fila=2;
+  1367   001442  0E02               	movlw	2
+  1368   001444  6E16               	movwf	det_fila@fila^0,c	;volatile
+  1369   001446                     i1l965:
+  1370                           
+  1371                           ;main_display_teclado_wiegand.c: 241:     if((PORTD&0x04)==0){
+  1372   001446  B483               	btfsc	131,2,c	;volatile
+  1373   001448  EF28  F00A         	goto	i1u5_21
+  1374   00144C  EF2A  F00A         	goto	i1u5_20
+  1375   001450                     i1u5_21:
+  1376   001450  EF2C  F00A         	goto	i1l969
+  1377   001454                     i1u5_20:
+  1378   001454                     
+  1379                           ;main_display_teclado_wiegand.c: 242:         fila=3;
+  1380   001454  0E03               	movlw	3
+  1381   001456  6E16               	movwf	det_fila@fila^0,c	;volatile
+  1382   001458                     i1l969:
+  1383                           
+  1384                           ;main_display_teclado_wiegand.c: 244:     if((PORTD&0x08)==0){
+  1385   001458  B683               	btfsc	131,3,c	;volatile
+  1386   00145A  EF31  F00A         	goto	i1u6_21
+  1387   00145E  EF33  F00A         	goto	i1u6_20
+  1388   001462                     i1u6_21:
+  1389   001462  EF35  F00A         	goto	i1l130
+  1390   001466                     i1u6_20:
+  1391   001466                     
+  1392                           ;main_display_teclado_wiegand.c: 245:         fila=4;
+  1393   001466  0E04               	movlw	4
+  1394   001468  6E16               	movwf	det_fila@fila^0,c	;volatile
+  1395   00146A                     i1l130:
+  1396                           
+  1397                           ;main_display_teclado_wiegand.c: 247:     return fila;
+  1398   00146A  5016               	movf	det_fila@fila^0,w,c	;volatile
+  1399   00146C  0012               	return		;funcret
+  1400   00146E                     __end_of_det_fila:
+  1401                           	callstack 0
+  1402                           
+  1403                           	psect	rparam
+  1404   000000                     
+  1405                           	psect	temp
+  1406   000027                     btemp:
+  1407                           	callstack 0
+  1408   000027                     	ds	1
+  1409   000000                     int$flags	set	btemp
+  1410   000000                     wtemp8	set	btemp+1
+  1411   000000                     ttemp5	set	btemp+1
+  1412   000000                     ttemp6	set	btemp+4
+  1413   000000                     ttemp7	set	btemp+8
+  1414                           tosu	equ	0xFFF
+  1415                           tosh	equ	0xFFE
+  1416                           tosl	equ	0xFFD
+  1417                           stkptr	equ	0xFFC
+  1418                           pclatu	equ	0xFFB
+  1419                           pclath	equ	0xFFA
+  1420                           pcl	equ	0xFF9
+  1421                           tblptru	equ	0xFF8
+  1422                           tblptrh	equ	0xFF7
+  1423                           tblptrl	equ	0xFF6
+  1424                           tablat	equ	0xFF5
+  1425                           prodh	equ	0xFF4
+  1426                           prodl	equ	0xFF3
+  1427                           indf0	equ	0xFEF
+  1428                           postinc0	equ	0xFEE
+  1429                           postdec0	equ	0xFED
+  1430                           preinc0	equ	0xFEC
+  1431                           plusw0	equ	0xFEB
+  1432                           fsr0h	equ	0xFEA
+  1433                           fsr0l	equ	0xFE9
+  1434                           wreg	equ	0xFE8
+  1435                           indf1	equ	0xFE7
+  1436                           postinc1	equ	0xFE6
+  1437                           postdec1	equ	0xFE5
+  1438                           preinc1	equ	0xFE4
+  1439                           plusw1	equ	0xFE3
+  1440                           fsr1h	equ	0xFE2
+  1441                           fsr1l	equ	0xFE1
+  1442                           bsr	equ	0xFE0
+  1443                           indf2	equ	0xFDF
+  1444                           postinc2	equ	0xFDE
+  1445                           postdec2	equ	0xFDD
+  1446                           preinc2	equ	0xFDC
+  1447                           plusw2	equ	0xFDB
+  1448                           fsr2h	equ	0xFDA
+  1449                           fsr2l	equ	0xFD9
+  1450                           status	equ	0xFD8
+
+Data Sizes:
+    Strings     0
+    Constant    32
+    Data        0
+    BSS         21
+    Persistent  1
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           94     16      38
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _lint in COMRAM
+
+    _lint->_shift
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _lint in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _lint in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _lint in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _lint in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _lint in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _lint in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _lint in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _lint in BANK7
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 3     3      0      15
+                                             13 COMRAM     3     3      0
+                           _conf_wig
+                             _config
+ ---------------------------------------------------------------------------------
+ (1) _config                                               0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _conf_wig                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (2) _lint                                                10    10      0     210
+                                              3 COMRAM    10    10      0
+                           _det_fila
+                              _shift
+ ---------------------------------------------------------------------------------
+ (3) _shift                                                3     3      0      75
+                                              0 COMRAM     3     3      0
+ ---------------------------------------------------------------------------------
+ (3) _det_fila                                             1     1      0      15
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _conf_wig
+   _config
+
+ _lint (ROOT)
+   _det_fila
+   _shift
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             7FF      0       0      38        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITCOMRAM           5E      0       0       0        0.0%
+COMRAM              5E     10      26       1       40.4%
+BITBIGSFRlllllh     23      0       0      35        0.0%
+BITBIGSFRlh         18      0       0      21        0.0%
+BITBIGSFRllhhhl     17      0       0      24        0.0%
+BITBIGSFRh           D      0       0      20        0.0%
+BITBIGSFRllllll      8      0       0      36        0.0%
+BITBIGSFRllhhhl      7      0       0      25        0.0%
+BITBIGSFRllhhll      6      0       0      28        0.0%
+BITBIGSFRllllh       5      0       0      34        0.0%
+BITBIGSFRllhhll      4      0       0      31        0.0%
+BITBIGSFRllhhll      4      0       0      32        0.0%
+BITBIGSFRllhhhl      2      0       0      26        0.0%
+BITBIGSFRllhhll      1      0       0      29        0.0%
+BITBIGSFRllhhhl      1      0       0      23        0.0%
+BITBIGSFRllhhll      1      0       0      30        0.0%
+BITBIGSFRllhhhh      1      0       0      22        0.0%
+BITBIGSFRllhhhl      1      0       0      27        0.0%
+BITBIGSFRllhl        1      0       0      33        0.0%
+BIGSFR               0      0       0     200        0.0%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      26      37        0.0%
+DATA                 0      0      26       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.46 build 20240104201356 
+Symbol Table                                                                                   Sun Jun 23 19:03:19 2024
+
+                     _c1 11E3                       _c2 11DF                       _d1 000F  
+                     _c3 11DB                       _d2 000E                       _c4 11D7  
+                     _d3 000D                       _d4 000C                       bsr 0FE0  
+                    l250 148C                      l188 13C8                      l981 134E  
+                    l991 1358                      l983 1350                      l975 1338  
+                    l993 135A                      l985 1352                      l977 134A  
+                    l995 135C                      l987 1354                      l979 134C  
+                    l997 1362                      l989 1356                      l999 1364  
+                    u210 1206                      u211 1202                      u220 1218  
+                    u221 1214                      u230 122A                      u231 1226  
+                    u240 1282                      u241 127E                      u250 1294  
+                    u251 1290                      u260 12A6                      u261 12A2  
+                    u270 12B8                      u271 12B4                      u280 12CA  
+                    u281 12C6                      u290 12DC                      u291 12D8  
+                    u427 1248                      u437 1260                      u447 130A  
+                    u457 1322     main@contador_digitos 0025                      wreg 0FE8  
+             _TXSTA1bits 0FAC                     l1001 136A                     l1011 1374  
+                   l1003 136C                     l1021 138A                     l1013 1376  
+                   l1005 136E                     l1031 1394                     l1023 138C  
+                   l1015 1378                     l1007 1370                     l1041 13B6  
+                   l1033 1396                     l1025 138E                     l1017 1386  
+                   l1009 1372                     l1201 12DC                     l1051 13C0  
+                   l1043 13B8                     l1035 1398                     l1027 1390  
+                   l1019 1388                     l1211 12FE                     l1203 12DE  
+                   l1061 1480                     l1053 13C6                     l1045 13BA  
+                   l1037 139A                     l1029 1392                     l1213 1300  
+                   l1205 12E2                     l1071 148A                     l1063 1482  
+                   l1055 146E                     l1047 13BC                     l1039 139C  
+                   l1215 1316                     l1207 12E6                     l1065 1484  
+                   l1057 147C                     l1049 13BE                     l1217 1318  
+                   l1209 12EA                     l1067 1486                     l1059 147E  
+                   l1219 132E                     l1171 11F2                     l1069 1488  
+                   l1181 123E                     l1173 11F6                     l1191 1282  
+                   l1183 1254                     l1175 1206                     l1167 11E8  
+                   l1193 1294                     l1185 1256                     l1177 1218  
+                   l1169 11EC                     l1195 12A6                     l1187 126C  
+                   l1179 122A                     l1197 12B8                     l1189 1272  
+                   l1199 12CA                     i1l90 10AE                     i1l92 10F2  
+                   i1l94 1136                     i1l87 106A                     i1l96 11A2  
+                   i1l89 11A0                     _main 11E8                     _lint 1018  
+                   btemp 0027                     start 11C2             ___param_bank 0000  
+                  ?_main 0016                    ?_lint 0016                    _EEADR 0FA9  
+                  i1l120 13E0                    i1l121 1418                    i1l130 146A  
+                  i1l122 13F4                    i1l131 146C                    i1l124 141C  
+                  i1l931 13CC                    i1l941 13F6                    i1l933 13D8  
+                  i1l951 1406                    i1l943 13FC                    i1l961 1434  
+                  i1l953 1408                    i1l945 1400                    i1l971 1466  
+                  i1l963 1442                    i1l955 141E                    i1l947 1402  
+                  i1l939 13EE                    i1l965 1446                    i1l957 1422  
+                  i1l949 1404                    i1l967 1454                    i1l959 1430  
+                  i1l969 1458                    _TMR0H 0FD7                    _TMR0L 0FD6  
+                  _PORTD 0F83                    _TRISE 0F96                    _firma 1006  
+                  _p_imp 0011                    _p_par 0010                    _nbits 0014  
+                  _tecla 0026                    _shift 13CA                    tablat 0FF5  
+                  ttemp5 0028                    ttemp6 002B                    ttemp7 002F  
+                  status 0FD8                    wtemp8 0028          __initialization 148E  
+           __end_of_main 1338             __end_of_lint 11C2                   ??_main 0023  
+                 ??_lint 0019            __activetblptr 0002                   _EEDATA 0FA8  
+                 _EECON2 0FA7                   ?_shift 0016                   _ANSELA 0F5B  
+                 _ANSELB 0F5C                   _ANSELC 0F5D                   _ANSELD 0F5E  
+                 _ANSELE 0F5F                   i1l1121 1036                   i1l1131 1072  
+                 i1l1123 1044                   i1l1141 10BC                   i1l1133 1078  
+                 i1l1125 104C                   i1l1151 1106                   i1l1143 10C2  
+                 i1l1135 107E                   i1l1127 105C                   i1l1119 1036  
+                 i1l1161 115A                   i1l1153 1116                   i1l1145 10D2  
+                 i1l1137 108E                   i1l1129 1064                   i1l1155 113E  
+                 i1l1147 10FA                   i1l1139 10B6                   i1l1157 1144  
+                 i1l1149 1100                   i1l1165 117A                   i1l1159 114A  
+                 _INTCON 0FF2                   _OSCCON 0FD3                   _SPBRG1 0FAF  
+                 i1u1_20 13EE                   i1u1_21 13EA                   i1u2_20 1418  
+                 i1u2_21 1414                   i1u3_20 1430                   i1u3_21 142C  
+                 i1u4_20 1442                   i1u4_21 143E                   i1u5_20 1454  
+                 i1u5_21 1450                   i1u6_20 1466                   i1u6_21 1462  
+       __end_of_det_fila 146E         __end_of_conf_wig 148E                   _config 1338  
+                 _nbits0 0013                   _nbits1 0012                   clear_0 1494  
+                 isa$std 0001                   _w_unos 0009             __mediumconst 0000  
+                 shift@k 0016                   shift@n 0018                   tblptrh 0FF7  
+                 tblptrl 0FF6                   tblptru 0FF8               __accesstop 0060  
+__end_of__initialization 149A            ___rparam_used 0001           __pcstackCOMRAM 0016  
+          __end_of_firma 1008            __end_of_shift 141E               __end_of_c1 11E7  
+             __end_of_c2 11E3               __end_of_c3 11DF               __end_of_c4 11DB  
+                ??_shift 0016               __pnvCOMRAM 0026                  ?_config 0016  
+                _OSCCON2 0FD2                  i1u20_20 115A                  i1u20_21 1156  
+                i1u15_20 1044                  i1u15_21 1040                  i1u16_20 105C  
+                i1u16_21 1058                  i1u17_20 108E                  i1u17_21 108A  
+                i1u18_20 10D2                  i1u18_21 10CE                  i1u19_20 1116  
+                i1u19_21 1112                ?_det_fila 0016                  _OSCTUNE 0F9B  
+                _SPBRGH1 0FB0                ?_conf_wig 0016                  __Hparam 0000  
+                __Lparam 0000             __psmallconst 11C6                  __pcinit 148E  
+                __ramtop 0800                  __ptext0 11E8                  __ptext1 1338  
+                __ptext2 146E                  __ptext4 13CA                  __ptext5 141E  
+              _T0CONbits 0FD5                  _w_ceros 0007               ??_det_fila 0016  
+                _timeout 0015                  _wig_val 0001               ??_conf_wig 0023  
+   end_of_initialization 149A        __end_of_segmentos 11D7            __Lmediumconst 0000  
+          __p_firma_text 1006                  postinc0 0FEE                _TRISAbits 0F92  
+              _TRISBbits 0F93                _TRISCbits 0F94                _TRISDbits 0F95  
+         __end_of_config 13CA      start_initialization 148E                 ??_config 0023  
+            __pbssCOMRAM 0001              __pintcodelo 1018              __smallconst 11C6  
+               _BAUDCON1 0FB8                 _LATAbits 0F89                 _LATBbits 0F8A  
+               _LATCbits 0F8B                 _LATEbits 0F8D                 _IPR1bits 0F9F  
+               _PIE1bits 0F9D                _segmentos 11C7                 _RCONbits 0FD0  
+            _INTCON2bits 0FF1              _INTCON3bits 0FF0               _EECON1bits 0FA6  
+               __Hrparam 0000                 __Lrparam 0000                lint@pulso 0005  
+           det_fila@fila 0016               _ANSELAbits 0F5B                 _det_fila 141E  
+               _conf_wig 146E                shift@dato 0017                 isa$xinst 0000  
+               int$flags 0027               _INTCONbits 0FF2                 lint@fila 0022  
+               lint@rota 000B                 intlevel1 0000               _RCSTA1bits 0FAB  
+          _firma_absaddr 1006  
