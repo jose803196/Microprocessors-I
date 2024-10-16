@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage[vmargin={2cm,2cm}, hmargin={2cm,2cm}]{geometry}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage[rflt]{floatflt}
+\usepackage{pdfpages}
+\usepackage{tikz-page}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage[explicit]{titlesec}
+\usepackage{soul}
+\usepackage{subcaption}
+\usepackage{pdfpages}
+
+%Inicio del preambulo
+
+\pagestyle{fancy}
+\fancypagestyle{mystyle}{
+    \fancyhf{}
+    \fancyhead[C]{}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+\newenvironment{centervert}{
+  \vspace*{\fill}
+  \begin{center}
+}{
+  \end{center}
+  \vspace*{\fill}
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.90}
+
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour}, commentstyle=\color{codegreen},
+  keywordstyle=\color{blue},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+
+\lstset{style=mystyle}
+
+%Fin del preambulo
+
+\begin{document}
+    \include{Portada}
+    \newpage
+    \tableofcontents
+    \definecolor{titleblue}{HTML}{4a7aa4}
+
+    \newbox\TitleUnderlineTestBox
+    \newcommand*\TitleUnderline[1]
+      {%
+        \bgroup
+        \setbox\TitleUnderlineTestBox\hbox{\colorbox{titleblue}\strut}%
+        \setul{\dimexpr\dp\TitleUnderlineTestBox-.3ex\relax}{.3ex}%
+        \ul{#1}%
+        \egroup
+      }
+    \newcommand*\SectionNumberBox[1]
+      {%
+        \colorbox{titleblue}
+          {%
+            \makebox[2.5em][c]
+              {%
+                \color{white}%
+                \strut
+                \csname the#1\endcsname
+              }%
+          }%
+        \TitleUnderline{\ \ \ }%
+      }
+    \titleformat{\section}
+      {\LARGE\bfseries\sffamily\color{titleblue}}
+      {\SectionNumberBox{section}}
+      {0pt}
+      {\TitleUnderline{#1}}
+      
+    \titleformat{\subsection}
+      {\Large\bfseries\sffamily\color{titleblue}}
+      {\SectionNumberBox{subsection}}
+      {0pt}
+      {\TitleUnderline{#1}}
+      
+    \titleformat{\subsubsection}
+      {\large\bfseries\sffamily\color{titleblue}}
+      {\SectionNumberBox{subsubsection}}
+      {0pt}
+      {\TitleUnderline{#1}}
+      
+      % Configuración de estilos  
+      
+        \tikzset{  
+          startstop/.style={rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm, text centered, draw=black, fill=red!30},  
+          io/.style={trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2.5cm, minimum height=1cm, text centered, draw=black, fill=blue!30},  
+          process/.style={rectangle, minimum width=2.5cm, minimum height=1cm, text centered, draw=black, fill=orange!30},  
+          decision/.style={diamond, minimum width=2.5cm, minimum height=1cm, text centered, draw=black, fill=green!30},  
+          arrow/.style={thick,->,>=stealth}  
+        }  
+
+      \include{Introduccion}
+      \include{Contenido}
+      \include{Conclusiones}
+\end{document}
