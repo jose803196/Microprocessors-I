@@ -16,3 +16,8 @@
 </ol>
 
 <p>The program used for serial communication is Docklight in version 2.4</p>
+
+
+<img src="Image/Lateral.jpg" alt="Descripción de la imagen 1">  
+<img src="Image/Perfil.jpg" alt="Descripción de la imagen 2">  
+<img src="Image/Superior.jpg" alt="Descripción de la imagen 3">  
